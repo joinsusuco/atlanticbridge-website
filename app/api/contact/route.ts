@@ -7,6 +7,7 @@ import {
   sanitizePhone,
   checkRateLimit,
   getRateLimitIdentifier,
+  getRequestFingerprint,
   isHoneypotTriggered,
   isValidContentType,
   isValidOrigin,
@@ -40,7 +41,8 @@ export async function POST(request: Request) {
 
   // Rate limiting: 10 requests per minute per IP
   const rateLimitId = getRateLimitIdentifier(request, "contact");
-  const rateLimit = checkRateLimit(rateLimitId, 10, 60000);
+  const fingerprint = getRequestFingerprint(request);
+  const rateLimit = checkRateLimit(rateLimitId, 10, 60000, fingerprint);
 
   if (rateLimit.limited) {
     return errorResponse(

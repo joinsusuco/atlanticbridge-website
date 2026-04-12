@@ -5,6 +5,7 @@ import {
   sanitizeText,
   checkRateLimit,
   getRateLimitIdentifier,
+  getRequestFingerprint,
   isHoneypotTriggered,
   isValidContentType,
   isValidOrigin,
@@ -35,7 +36,8 @@ export async function POST(request: Request) {
 
   // Rate limiting: 3 requests per minute per IP (stricter for newsletter)
   const rateLimitId = getRateLimitIdentifier(request, "newsletter");
-  const rateLimit = checkRateLimit(rateLimitId, 3, 60000);
+  const fingerprint = getRequestFingerprint(request);
+  const rateLimit = checkRateLimit(rateLimitId, 3, 60000, fingerprint);
 
   if (rateLimit.limited) {
     return errorResponse(

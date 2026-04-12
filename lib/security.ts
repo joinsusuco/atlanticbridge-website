@@ -242,10 +242,10 @@ export function getRateLimitIdentifier(
     ip = cfIp;
   } else if (vercelIp) {
     ip = vercelIp.split(",")[0].trim();
-  } else if (forwardedFor) {
-    // Only trust first IP if behind known proxy
+  } else if (process.env.NODE_ENV === "development" && forwardedFor) {
+    // Only trust fallback proxy headers in development
     ip = forwardedFor.split(",")[0].trim();
-  } else if (realIp) {
+  } else if (process.env.NODE_ENV === "development" && realIp) {
     ip = realIp;
   }
 
@@ -332,9 +332,7 @@ export function isValidOrigin(request: Request): boolean {
 
   // Check origin header first (most reliable)
   if (origin) {
-    return ALLOWED_ORIGINS.some(
-      (allowed) => origin === allowed || origin.startsWith(allowed)
-    );
+    return ALLOWED_ORIGINS.includes(origin);
   }
 
   // Fall back to referer
@@ -342,9 +340,7 @@ export function isValidOrigin(request: Request): boolean {
     try {
       const refererUrl = new URL(referer);
       const refererOrigin = refererUrl.origin;
-      return ALLOWED_ORIGINS.some(
-        (allowed) => refererOrigin === allowed || refererOrigin.startsWith(allowed)
-      );
+      return ALLOWED_ORIGINS.includes(refererOrigin);
     } catch {
       return false;
     }
@@ -374,9 +370,9 @@ export function getClientMetadata(request: Request): {
     ipAddress = cfIp;
   } else if (vercelIp) {
     ipAddress = vercelIp.split(",")[0].trim();
-  } else if (forwardedFor) {
+  } else if (process.env.NODE_ENV === "development" && forwardedFor) {
     ipAddress = forwardedFor.split(",")[0].trim();
-  } else if (realIp) {
+  } else if (process.env.NODE_ENV === "development" && realIp) {
     ipAddress = realIp;
   }
 
