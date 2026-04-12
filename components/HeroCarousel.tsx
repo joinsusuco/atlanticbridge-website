@@ -178,8 +178,8 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Slide Indicators */}
-      <div className={`absolute bottom-8 left-6 sm:left-8 lg:left-6 ${isMaximized ? "xl:left-[7.5%]" : "xl:left-8"} z-10 flex gap-3`}>
+      {/* Slide Indicators - Hidden on mobile */}
+      <div className={`hidden sm:flex absolute bottom-8 left-6 sm:left-8 lg:left-6 ${isMaximized ? "xl:left-[7.5%]" : "xl:left-8"} z-10 gap-3`}>
         {slides.map((_, index) => (
           <button
             key={index}
