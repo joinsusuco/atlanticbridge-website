@@ -93,7 +93,7 @@ export default function HeroCarousel() {
       ))}
 
       {/* Hero Content - Left Aligned */}
-      <div className={`relative z-10 w-full px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
+      <div className={`relative z-10 w-full pt-20 sm:pt-24 md:pt-0 px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Text Content */}
           <div className="relative">

@@ -84,15 +84,15 @@ export default function DepartureBanner({ variant = "full" }: DepartureBannerPro
           </Link>
         </div>
 
-        {/* Image */}
-        <div className="lg:col-span-2 relative min-h-[200px] lg:min-h-0">
+        {/* Image - Hidden on mobile */}
+        <div className="hidden lg:block lg:col-span-2 relative">
           <Image
             src="/Roro-transporting.jpg"
             alt="Vehicle shipping via RoRo"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/50 to-transparent lg:block hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/50 to-transparent" />
         </div>
       </div>
     </div>

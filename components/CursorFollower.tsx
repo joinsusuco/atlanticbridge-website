@@ -6,7 +6,21 @@ export default function CursorFollower() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isOverButton, setIsOverButton] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(true); // Default to true to avoid flash
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Detect touch devices on mount
+  useEffect(() => {
+    const checkTouchDevice = () => {
+      const hasTouch =
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches;
+      setIsTouchDevice(hasTouch);
+    };
+
+    checkTouchDevice();
+  }, []);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     // Clear any pending hide timeout - cursor is back
@@ -42,6 +56,9 @@ export default function CursorFollower() {
   }, []);
 
   useEffect(() => {
+    // Don't add listeners on touch devices
+    if (isTouchDevice) return;
+
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("visibilitychange", handleVisibilityChange);
@@ -57,7 +74,10 @@ export default function CursorFollower() {
         clearTimeout(hideTimeoutRef.current);
       }
     };
-  }, [handleMouseMove, handleMouseLeave, handleVisibilityChange]);
+  }, [handleMouseMove, handleMouseLeave, handleVisibilityChange, isTouchDevice]);
+
+  // Don't render on touch devices
+  if (isTouchDevice) return null;
 
   return (
     <div

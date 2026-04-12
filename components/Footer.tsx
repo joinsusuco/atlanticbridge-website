@@ -221,7 +221,7 @@ export default function Footer() {
                       )}
                     </button>
                   </div>
-                  <label className="flex items-start gap-2 cursor-pointer">
+                  <label className="flex items-start gap-2 cursor-pointer pb-16 lg:pb-0">
                     <input
                       type="checkbox"
                       checked={agreedToPrivacy}
