@@ -1,0 +1,25 @@
+{
+  "name": "Atlantic Bridge LLC",
+  "short_name": "Atlantic Bridge",
+  "description": "Professional shipping and freight services from the USA to The Gambia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F8FA",
+  "theme_color": "#0B1F3A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "logistics", "shipping"]
+}
