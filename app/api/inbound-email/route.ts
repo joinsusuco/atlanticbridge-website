@@ -33,9 +33,22 @@ export async function POST(request: NextRequest) {
       headers,
     } = payload;
 
-    // Extract sender info
-    const senderEmail = typeof from === "string" ? from : from?.email || "unknown@unknown.com";
-    const senderName = typeof from === "object" ? from?.name || senderEmail : senderEmail;
+    // Extract sender info from the 'from' field (email string) or headers
+    let senderEmail = from || "unknown@unknown.com";
+    let senderName = senderEmail;
+
+    // Try to get better from info from headers (format: "Name" <email@example.com>)
+    const headerFrom = headers?.from;
+    if (headerFrom) {
+      const match = headerFrom.match(/(?:"?([^"]*)"?\s)?<?([^\s>]+@[^\s>]+)>?/);
+      if (match) {
+        senderName = match[1] || match[2];
+        senderEmail = match[2];
+      }
+    }
+
+    // Get recipient
+    const recipient = Array.isArray(to) ? to.join(", ") : to || headers?.to || "unknown";
 
     // Build forwarded subject
     const forwardedSubject = `[Forwarded] ${subject || "No Subject"}`;
@@ -44,7 +57,7 @@ export async function POST(request: NextRequest) {
     const forwardedText = `
 ---------- Forwarded message ----------
 From: ${senderName} <${senderEmail}>
-To: ${Array.isArray(to) ? to.join(", ") : to}
+To: ${recipient}
 Subject: ${subject || "No Subject"}
 
 ${text || "(No text content)"}
@@ -55,7 +68,7 @@ ${text || "(No text content)"}
 <div style="border-left: 2px solid #ccc; padding-left: 16px; margin-bottom: 16px; color: #666;">
   <p><strong>---------- Forwarded message ----------</strong></p>
   <p><strong>From:</strong> ${senderName} &lt;${senderEmail}&gt;</p>
-  <p><strong>To:</strong> ${Array.isArray(to) ? to.join(", ") : to}</p>
+  <p><strong>To:</strong> ${recipient}</p>
   <p><strong>Subject:</strong> ${subject || "No Subject"}</p>
 </div>
 ${html}
