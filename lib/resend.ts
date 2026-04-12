@@ -330,3 +330,110 @@ This message was submitted via the Atlantic Bridge website contact form.
     };
   }
 }
+
+/**
+ * Send newsletter welcome email to new subscriber
+ */
+export async function sendNewsletterWelcome(email: string): Promise<{ success: boolean; error?: string }> {
+  const subject = "Welcome to Atlantic Bridge!";
+
+  const textContent = `
+Welcome to Atlantic Bridge!
+
+Thank you for subscribing to our newsletter. You'll now receive updates on:
+
+• Upcoming shipping schedules from USA to The Gambia
+• New services and special offers
+• Industry news and tips for international shipping
+• Exclusive deals for subscribers
+
+If you have any questions, simply reply to this email or visit our website.
+
+Best regards,
+The Atlantic Bridge Team
+
+---
+Atlantic Bridge
+USA to The Gambia Shipping, Export & Sourcing
+https://atlanticbridgeus.com
+
+To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
+  `.trim();
+
+  const htmlContent = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+  <div style="background: #0a1628; padding: 32px; border-radius: 8px 8px 0 0; text-align: center;">
+    <img src="https://atlanticbridgeus.com/logo.png" alt="Atlantic Bridge" width="80" height="80" style="display: inline-block; margin-bottom: 16px;" />
+    <h1 style="color: #d4af37; margin: 0; font-size: 28px;">Welcome Aboard!</h1>
+    <p style="color: rgba(255,255,255,0.8); margin: 12px 0 0 0; font-size: 16px;">Thank you for joining Atlantic Bridge</p>
+  </div>
+
+  <div style="background: #ffffff; padding: 32px; border: 1px solid #e9ecef;">
+    <p style="margin: 0 0 20px 0; font-size: 16px;">
+      You're now part of our community! Here's what you can expect from us:
+    </p>
+
+    <ul style="margin: 0 0 24px 0; padding-left: 20px;">
+      <li style="margin-bottom: 12px;"><strong style="color: #0a1628;">Shipping Schedules</strong> — Get notified about upcoming departures from USA to The Gambia</li>
+      <li style="margin-bottom: 12px;"><strong style="color: #0a1628;">Special Offers</strong> — Exclusive deals and discounts for our subscribers</li>
+      <li style="margin-bottom: 12px;"><strong style="color: #0a1628;">New Services</strong> — Be the first to know about our latest offerings</li>
+      <li style="margin-bottom: 12px;"><strong style="color: #0a1628;">Expert Tips</strong> — Helpful advice for international shipping and sourcing</li>
+    </ul>
+
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #d4af37;">
+      <p style="margin: 0; font-size: 15px;">
+        <strong>Need help?</strong> Simply reply to this email or visit <a href="https://atlanticbridgeus.com/contact" style="color: #d4af37;">our contact page</a>.
+      </p>
+    </div>
+  </div>
+
+  <div style="background: #ffffff; padding: 24px; border: 1px solid #e9ecef; border-top: none; text-align: center;">
+    <p style="margin: 0 0 16px 0; color: #666;">Ready to ship or source products?</p>
+    <a href="https://atlanticbridgeus.com/quote" style="display: inline-block; background: #d4af37; color: #0a1628; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Get a Free Quote</a>
+  </div>
+
+  <div style="background: #0a1628; padding: 24px; border-radius: 0 0 8px 8px; text-align: center;">
+    <p style="color: rgba(255,255,255,0.9); margin: 0 0 8px 0; font-weight: 600;">Atlantic Bridge</p>
+    <p style="color: rgba(255,255,255,0.6); margin: 0 0 16px 0; font-size: 13px;">
+      USA to The Gambia — Shipping, Export & Sourcing
+    </p>
+    <p style="margin: 0;">
+      <a href="https://atlanticbridgeus.com" style="color: #d4af37; text-decoration: none; font-size: 14px;">atlanticbridgeus.com</a>
+    </p>
+    <p style="color: rgba(255,255,255,0.4); margin: 16px 0 0 0; font-size: 11px;">
+      To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
+    </p>
+  </div>
+</body>
+</html>
+  `.trim();
+
+  try {
+    const { error } = await getResendClient().emails.send({
+      from: FROM_EMAIL,
+      to: [email],
+      subject,
+      text: textContent,
+      html: htmlContent,
+    });
+
+    if (error) {
+      console.error("Failed to send newsletter welcome email:", error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Failed to send newsletter welcome email:", error);
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
+  }
+}

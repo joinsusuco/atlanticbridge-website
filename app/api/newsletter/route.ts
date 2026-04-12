@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { upsertNewsletterSubscriber } from "@/lib/supabase";
+import { sendNewsletterWelcome } from "@/lib/resend";
 import {
   sanitizeEmail,
   sanitizeText,
@@ -93,9 +94,16 @@ export async function POST(request: Request) {
       return errorResponse("Failed to subscribe. Please try again.", 500);
     }
 
+    // Send welcome email only for new subscribers
+    if (dbResult.isNew) {
+      sendNewsletterWelcome(email).catch((error) => {
+        console.error("Failed to send newsletter welcome email:", error);
+      });
+    }
+
     // Customize message based on whether it's a new subscriber
     const message = dbResult.isNew
-      ? "Successfully subscribed to newsletter. Thank you for joining!"
+      ? "Successfully subscribed to newsletter. Check your inbox for a welcome email!"
       : "You're already subscribed. Thank you for your interest!";
 
     return jsonResponse({
