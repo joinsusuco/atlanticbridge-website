@@ -1,8 +1,8 @@
 import { Resend } from "resend";
 import { escapeHtml } from "./security";
 
-// Email recipient
-const NOTIFICATION_EMAIL = "info@atlanticbridgeus.com";
+// Email recipient (notifications go to Gmail)
+const NOTIFICATION_EMAIL = "atlanticbridgeus@gmail.com";
 const FROM_EMAIL = "Atlantic Bridge <noreply@atlanticbridgeus.com>";
 
 // Lazy initialization of Resend client
