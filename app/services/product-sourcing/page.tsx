@@ -104,7 +104,7 @@ export default function ProductSourcingPage() {
             <div className="flex items-center gap-2 mb-6 text-sm">
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/60 hover:text-gold transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-gold-light transition-colors"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -112,13 +112,13 @@ export default function ProductSourcingPage() {
                 All Services
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-gold font-bold tracking-wider uppercase">
+              <span className="text-gold-light font-bold tracking-wider uppercase">
                 Product Sourcing
               </span>
             </div>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Import Products from USA{" "}
-              <span className="text-gold">to Gambia</span>
+              <span className="text-gold-light">to Gambia</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Buy furniture, appliances, electronics, and equipment from American suppliers.
@@ -151,7 +151,7 @@ export default function ProductSourcingPage() {
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 What We Do
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -172,11 +172,11 @@ export default function ProductSourcingPage() {
 
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <div className="text-3xl font-bold text-gold">100+</div>
+                  <div className="text-3xl font-bold text-gold-dark">100+</div>
                   <div className="text-gray-600 text-sm mt-1">US Suppliers</div>
                 </div>
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <div className="text-3xl font-bold text-gold">4-6</div>
+                  <div className="text-3xl font-bold text-gold-dark">4-6</div>
                   <div className="text-gray-600 text-sm mt-1">Weeks Avg. Delivery</div>
                 </div>
               </div>
@@ -209,14 +209,14 @@ export default function ProductSourcingPage() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               Categories
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
               What We Source
             </h2>
             <p className="mt-4 text-gray-600 lg:text-lg">
-              We handle a wide range of product categories. If it's available in the US market,
+              We handle a wide range of product categories. If it&apos;s available in the US market,
               we can likely source it for you.
             </p>
           </div>
@@ -245,11 +245,11 @@ export default function ProductSourcingPage() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-600 lg:text-lg">
-              Don't see what you're looking for?{" "}
-              <Link href="/quote?service=product-sourcing" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              Don&apos;t see what you&apos;re looking for?{" "}
+              <Link href="/quote?service=product-sourcing" className="text-gold-dark font-semibold hover:text-gold transition-colors">
                 Contact us
               </Link>{" "}
-              and we'll let you know if we can help.
+              and we&apos;ll let you know if we can help.
             </p>
           </div>
         </div>
@@ -260,8 +260,8 @@ export default function ProductSourcingPage() {
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
-                Who It's For
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
+                Who It&apos;s For
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
                 Is Product Sourcing Right for You?
@@ -294,13 +294,13 @@ export default function ProductSourcingPage() {
           {/* Left Side - Steps */}
           <div className={`py-16 lg:py-20 pl-6 sm:pl-8 pr-4 sm:pr-6 lg:pl-6 lg:pr-8 xl:pr-12 ${isMaximized ? "xl:pl-[15%]" : "xl:pl-8"}`}>
             <div>
-              <span className="text-gold font-semibold tracking-wide uppercase text-sm">
+              <span className="text-gold-light font-semibold tracking-wide uppercase text-sm">
                 The Process
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 How Product Sourcing Works
               </h2>
-              <p className="mt-4 text-white/70 lg:text-lg">
+              <p className="mt-4 text-white/80 lg:text-lg">
                 A clear, step-by-step process from your initial request to delivery in The Gambia.
               </p>
             </div>
@@ -328,11 +328,11 @@ export default function ProductSourcingPage() {
                         isActive ? "border-gold" : "border-white/30 group-hover:border-white/50"
                       }`}>
                         <span className={`font-bold text-sm transition-all duration-300 ${
-                          isActive ? "text-gold" : "text-white/50 group-hover:text-white"
+                          isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                         }`}>{step.number}</span>
                       </div>
                       <span className={`text-lg font-bold transition-all duration-300 ${
-                        isActive ? "text-gold" : "text-white/60 group-hover:text-white"
+                        isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                       }`}>
                         {step.title}
                       </span>
@@ -361,7 +361,7 @@ export default function ProductSourcingPage() {
                 <div className="absolute -top-3 left-8 w-6 h-6 bg-gold transform rotate-45" />
 
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-gold font-bold text-2xl">{activeStep.number}</span>
+                  <span className="text-gold-light font-bold text-2xl">{activeStep.number}</span>
                   <h3 className="text-xl lg:text-2xl font-bold text-white">
                     {activeStep.title}
                   </h3>
@@ -383,7 +383,7 @@ export default function ProductSourcingPage() {
               Ready to Source Products from the US?
             </h2>
             <p className="mt-6 text-gray-600 text-lg lg:text-xl max-w-2xl mx-auto">
-              Tell us what you need and we'll provide a detailed quote. No obligation,
+              Tell us what you need and we&apos;ll provide a detailed quote. No obligation,
               no hidden fees - just a clear breakdown of costs and timelines.
             </p>
 

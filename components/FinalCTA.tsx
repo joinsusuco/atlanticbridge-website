@@ -1,11 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 export default function FinalCTA() {
-  const isMaximized = useIsMaximized();
-
   return (
     <section className="py-20 lg:py-28 bg-navy relative overflow-hidden">
       {/* Background Image */}
@@ -21,16 +16,14 @@ export default function FinalCTA() {
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
       </div>
 
-      <div
-        className={`relative px-2 sm:px-4 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}
-      >
+      <div className="relative px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-[7.5%]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Ready to Source from the US?
           </h2>
           <p className="mt-6 text-white/70 text-lg lg:text-xl max-w-2xl mx-auto">
-            Tell us what you need. Whether it's a vehicle, bulk goods, or specific products,
-            we'll provide a clear quote and handle the rest.
+            Tell us what you need. Whether it&apos;s a vehicle, bulk goods, or specific products,
+            we&apos;ll provide a clear quote and handle the rest.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

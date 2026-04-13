@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 const services = [
   {
@@ -50,13 +49,12 @@ const services = [
 
 export default function ServicesShowcase() {
   const [activeService, setActiveService] = useState(services[0]);
-  const isMaximized = useIsMaximized();
 
   return (
     <section className="bg-navy">
       <div className="lg:grid lg:grid-cols-2 lg:min-h-[700px]">
         {/* Left Side - Service List */}
-        <div className={`pt-16 pb-8 lg:py-20 pl-6 sm:pl-8 pr-4 sm:pr-6 lg:pl-6 lg:pr-8 xl:pr-12 ${isMaximized ? "xl:pl-[15%]" : "xl:pl-8"}`}>
+        <div className="pt-16 pb-8 lg:py-20 pl-6 sm:pl-8 pr-4 sm:pr-6 lg:pl-6 lg:pr-8 xl:pl-8 xl:pr-12 2xl:pl-[15%]">
           <div className="text-center lg:text-left">
             <span className="text-gold font-semibold tracking-wide uppercase text-sm">
               Services We Offer
@@ -114,6 +112,7 @@ export default function ServicesShowcase() {
                 src={service.image}
                 alt={service.title}
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
               {/* Gradient overlay for readability */}
@@ -135,9 +134,10 @@ export default function ServicesShowcase() {
               </p>
               <Link
                 href={activeService.href}
+                aria-label={`Learn more about ${activeService.title}`}
                 className="inline-flex items-center mt-5 text-gold font-semibold text-sm hover:gap-2 gap-1 transition-all group"
               >
-                Learn More
+                Learn more about {activeService.title}
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="none"

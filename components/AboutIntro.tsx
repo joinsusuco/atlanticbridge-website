@@ -1,15 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 export default function AboutIntro() {
-  const isMaximized = useIsMaximized();
-
   return (
     <section className="py-16 lg:py-24 bg-white">
-      <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
+      <div className="px-6 sm:px-8 lg:px-6 xl:px-8 2xl:px-[7.5%]">
         <div className="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-20 lg:items-center">
           {/* Image Composition */}
           <div className="relative">
@@ -18,6 +13,7 @@ export default function AboutIntro() {
                 src="/hero-cargo-ship-aerial.jpg"
                 alt="Atlantic Bridge shipping operations"
                 fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -27,6 +23,7 @@ export default function AboutIntro() {
                 src="/gallery-maersk-container.jpg"
                 alt="Container shipping"
                 fill
+                sizes="(min-width: 1024px) 208px, (min-width: 640px) 160px, 112px"
                 className="object-cover"
               />
             </div>
@@ -36,7 +33,7 @@ export default function AboutIntro() {
 
           {/* Content */}
           <div className="mt-12 lg:mt-0">
-            <span className="text-gold font-bold tracking-wider uppercase text-base">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-base">
               About Atlantic Bridge
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">

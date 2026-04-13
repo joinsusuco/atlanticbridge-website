@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 const trustPillars = [
   {
@@ -27,17 +24,13 @@ const trustPillars = [
 ];
 
 export default function WhyChooseUs() {
-  const isMaximized = useIsMaximized();
-
   return (
     <section className="py-20 lg:py-28 bg-white">
-      <div
-        className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}
-      >
+      <div className="px-6 sm:px-8 lg:px-6 xl:px-8 2xl:px-[7.5%]">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
           {/* Left Side - Heading + Image Composition */}
           <div>
-            <span className="text-gold font-bold tracking-wider uppercase text-base">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-base">
               Why Choose Us
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -54,6 +47,7 @@ export default function WhyChooseUs() {
                     src="/hero-cargo-ship-aerial.jpg"
                     alt="Cargo ship operations"
                     fill
+                    sizes="(min-width: 640px) 224px, 192px"
                     className="object-cover"
                   />
                 </div>
@@ -64,6 +58,7 @@ export default function WhyChooseUs() {
                     src="/gallery-car-loading.jpg"
                     alt="Vehicle loading"
                     fill
+                    sizes="(min-width: 640px) 224px, 192px"
                     className="object-cover"
                   />
                   {/* Gold corner accent */}
@@ -76,6 +71,7 @@ export default function WhyChooseUs() {
                     src="/gallery-container-appliances.jpg"
                     alt="Container with appliances"
                     fill
+                    sizes="(min-width: 640px) 224px, 192px"
                     className="object-cover"
                   />
                 </div>

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 const companyLinks = [
   { href: "/about", label: "About Us" },
@@ -15,7 +14,6 @@ const companyLinks = [
 
 
 export default function Footer() {
-  const isMaximized = useIsMaximized();
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
@@ -92,11 +90,11 @@ export default function Footer() {
                   height={60}
                   className="w-14 h-14 object-contain"
                 />
-                <span className="text-xl font-bold text-gold">
+                <span className="text-xl font-bold text-gold-light">
                   Atlantic Bridge
                 </span>
               </Link>
-              <p className="mt-4 text-white/60 text-base leading-relaxed">
+              <p className="mt-4 text-white/80 text-base leading-relaxed">
                 Connecting US supply with Gambian demand. Sourcing products, vehicles, and bulk goods through a structured, reliable process.
               </p>
             </div>
@@ -106,13 +104,13 @@ export default function Footer() {
               <h3 className="text-xl font-bold text-white mb-6">Contact Us</h3>
               <div className="space-y-4">
                 <div>
-                  <p className="text-white/50 text-base mb-1">Address:</p>
+                  <p className="text-white/75 text-base mb-1">Address:</p>
                   <p className="text-white/80 text-base">
                     United States
                   </p>
                 </div>
                 <div>
-                  <p className="text-white/50 text-base mb-1">Phone:</p>
+                  <p className="text-white/75 text-base mb-1">Phone:</p>
                   <a
                     href="tel:+12025551234"
                     className="text-white/80 text-base hover:text-gold transition-colors"
@@ -121,7 +119,7 @@ export default function Footer() {
                   </a>
                 </div>
                 <div>
-                  <p className="text-white/50 text-base mb-1">Email:</p>
+                  <p className="text-white/75 text-base mb-1">Email:</p>
                   <a
                     href="mailto:info@atlanticbridgeus.com"
                     className="text-white/80 text-base hover:text-gold transition-colors"
@@ -140,7 +138,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="flex items-center text-white/70 hover:text-gold transition-colors text-base group"
+                      className="flex items-center text-white/85 hover:text-gold-light transition-colors text-base group"
                       onClick={(e) => {
                         if (link.href.startsWith("/#")) {
                           const id = link.href.substring(2);
@@ -173,7 +171,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <h3 className="text-xl font-bold text-white mb-6">Stay Updated</h3>
-              <p className="text-white/60 text-base mb-4">
+              <p className="text-white/80 text-base mb-4">
                 Subscribe to get the latest updates on shipping and sourcing.
               </p>
               {subscribeStatus === "success" ? (
@@ -185,7 +183,11 @@ export default function Footer() {
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="space-y-3">
                   <div className="relative">
+                    <label htmlFor="footer-newsletter-email" className="sr-only">
+                      Email address for newsletter updates
+                    </label>
                     <input
+                      id="footer-newsletter-email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -197,6 +199,7 @@ export default function Footer() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
+                      aria-label={isSubmitting ? "Submitting newsletter signup" : "Subscribe to newsletter"}
                       className="absolute right-1 top-1 bottom-1 px-3 bg-gold hover:bg-gold-light rounded-md transition-colors disabled:opacity-50"
                     >
                       {isSubmitting ? (
@@ -228,7 +231,7 @@ export default function Footer() {
                       onChange={(e) => setAgreedToPrivacy(e.target.checked)}
                       className="mt-1 w-4 h-4 rounded border-white/30 bg-transparent text-gold focus:ring-gold focus:ring-offset-0"
                     />
-                    <span className="text-white/50 text-xs">
+                    <span className="text-white/75 text-xs">
                       I agree to the{" "}
                       <Link href="/privacy" className="underline hover:text-white">
                         Privacy Policy
@@ -248,19 +251,19 @@ export default function Footer() {
         <div className="border-t border-white/10">
           <div className="py-6 px-6 sm:px-10 lg:px-16 xl:px-24">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-white/50 text-sm">
+              <p className="text-white/75 text-sm">
                 Copyright © {currentYear} Atlantic Bridge. All Rights Reserved.
               </p>
               <div className="flex items-center gap-6">
                 <Link
                   href="/terms"
-                  className="text-white/50 hover:text-white text-sm transition-colors"
+                  className="text-white/75 hover:text-white text-sm transition-colors"
                 >
                   Terms & Conditions
                 </Link>
                 <Link
                   href="/privacy"
-                  className="text-white/50 hover:text-white text-sm transition-colors"
+                  className="text-white/75 hover:text-white text-sm transition-colors"
                 >
                   Privacy Policy
                 </Link>

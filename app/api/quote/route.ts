@@ -1,5 +1,9 @@
 import { z } from "zod";
-import { insertQuote } from "@/lib/supabase";
+import {
+  attachPendingUploadsToQuote,
+  generateSignedUrls,
+  insertQuote,
+} from "@/lib/supabase";
 import { sendQuoteNotification } from "@/lib/resend";
 import {
   sanitizeText,
@@ -13,6 +17,7 @@ import {
   isValidContentType,
   isValidOrigin,
   getClientMetadata,
+  verifyUploadToken,
   jsonResponse,
   errorResponse,
 } from "@/lib/security";
@@ -72,6 +77,18 @@ const quoteSchema = z.object({
   cargoEstimatedWeight: z.string().max(50).optional(),
   cargoDimensions: z.string().max(200).optional(),
   cargoDeliveryMethod: z.string().max(50).optional(),
+
+  // Image uploads (already uploaded to storage)
+  images: z
+    .array(
+      z.object({
+        path: z.string().max(500),
+        filename: z.string().max(200),
+        token: z.string().max(2000),
+      })
+    )
+    .max(5)
+    .optional(),
 });
 
 export async function POST(request: Request) {
@@ -184,6 +201,29 @@ export async function POST(request: Request) {
     // Get client metadata
     const { ipAddress, userAgent } = getClientMetadata(request);
 
+    // Process images if provided
+    const images = data.images || [];
+    const verifiedImages = images.map((image) => verifyUploadToken(image.token, fingerprint));
+
+    if (images.length !== verifiedImages.length || verifiedImages.some((image) => !image)) {
+      return errorResponse("One or more uploaded images could not be verified. Please re-upload and try again.", 400);
+    }
+
+    const trustedImages = verifiedImages.filter((image): image is NonNullable<typeof image> => Boolean(image));
+    const uniqueImagePaths = new Set(trustedImages.map((image) => image.path));
+
+    if (uniqueImagePaths.size !== trustedImages.length) {
+      return errorResponse("Duplicate uploaded images are not allowed.", 400);
+    }
+
+    if (trustedImages.length > 0) {
+      formData.images = trustedImages.map((image) => ({
+        path: image.path,
+        filename: image.filename,
+        size: image.size,
+      }));
+    }
+
     // Save to database
     const dbResult = await insertQuote({
       service_type: sanitizedData.serviceType,
@@ -203,6 +243,37 @@ export async function POST(request: Request) {
       return errorResponse("Failed to submit quote. Please try again.", 500);
     }
 
+    if (trustedImages.length > 0) {
+      const attachResult = await attachPendingUploadsToQuote(
+        dbResult.id as string,
+        trustedImages.map((image) => image.path),
+        fingerprint
+      );
+
+      if (!attachResult.success || attachResult.attachedCount !== trustedImages.length) {
+        console.error("Failed to attach uploaded images to quote");
+        return errorResponse(
+          "One or more uploaded images could not be linked to your quote. Please re-upload and try again.",
+          400
+        );
+      }
+    }
+
+    // Generate signed URLs for images if any
+    let imageUrls: { filename: string; url: string }[] = [];
+    if (trustedImages.length > 0) {
+      const signedUrls = await generateSignedUrls(
+        trustedImages.map((image) => image.path),
+        24 * 60 * 60
+      );
+      imageUrls = trustedImages
+        .map((img, idx) => ({
+          filename: img.filename,
+          url: signedUrls[idx]?.url || "",
+        }))
+        .filter((i) => i.url);
+    }
+
     // Send email notification (non-blocking)
     sendQuoteNotification({
       serviceType: sanitizedData.serviceType,
@@ -213,6 +284,7 @@ export async function POST(request: Request) {
       preferredContact: sanitizedData.preferredContact,
       additionalNotes: sanitizedData.additionalNotes || undefined,
       formData,
+      imageUrls: imageUrls.length > 0 ? imageUrls : undefined,
     }).catch((error) => {
       // Log email failure but don't fail the request
       console.error("Failed to send quote notification email:", error);

@@ -84,6 +84,8 @@ export default function HeroCarousel() {
             src={slide.image}
             alt={slide.alt}
             fill
+            sizes="100vw"
+            fetchPriority={index === 0 ? "high" : undefined}
             className="object-cover"
             priority={index === 0}
           />
@@ -118,7 +120,7 @@ export default function HeroCarousel() {
                 <div className="mt-8 sm:mt-10 2xl:mt-12 flex flex-row gap-4">
                   <a
                     href="/quote"
-                    className="inline-flex items-center justify-center px-5 sm:px-8 2xl:px-10 py-3 sm:py-4 2xl:py-5 text-sm sm:text-base 2xl:text-lg font-semibold rounded-full bg-gold text-white hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-md transition-all duration-200"
+                    className="inline-flex items-center justify-center px-5 sm:px-8 2xl:px-10 py-3 sm:py-4 2xl:py-5 text-sm sm:text-base 2xl:text-lg font-semibold rounded-full bg-gold text-navy hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-md transition-all duration-200"
                   >
                     Request a Quote
                   </a>
@@ -167,6 +169,7 @@ export default function HeroCarousel() {
                   src={slide.featureImage}
                   alt={slide.featureAlt}
                   fill
+                  sizes="(min-width: 1536px) 720px, (min-width: 1280px) 520px, 50vw"
                   className="object-cover"
                 />
                 {/* Subtle overlay */}

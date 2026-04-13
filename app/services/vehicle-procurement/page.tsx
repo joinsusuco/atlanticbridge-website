@@ -107,7 +107,7 @@ export default function VehicleProcurementPage() {
             <div className="flex items-center gap-2 mb-6 text-sm">
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/60 hover:text-gold transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-gold-light transition-colors"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -115,13 +115,13 @@ export default function VehicleProcurementPage() {
                 All Services
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-gold font-bold tracking-wider uppercase">
+              <span className="text-gold-light font-bold tracking-wider uppercase">
                 Vehicle Procurement
               </span>
             </div>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Buy American Cars,{" "}
-              <span className="text-gold">Ship to Gambia</span>
+              <span className="text-gold-light">Ship to Gambia</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Import used cars, trucks, and SUVs from USA to Gambia. We source from
@@ -153,7 +153,7 @@ export default function VehicleProcurementPage() {
       <section className="py-20 lg:py-28 bg-white">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               What We Source
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -185,7 +185,7 @@ export default function VehicleProcurementPage() {
                 <div className="p-6">
                   <p className="text-gray-600 leading-relaxed">{type.description}</p>
                   <div className="mt-4 pt-4 border-t border-gray-200">
-                    <p className="text-sm text-gray-500 mb-2">Popular models:</p>
+                    <p className="text-sm text-gray-600 mb-2">Popular models:</p>
                     <div className="flex flex-wrap gap-2">
                       {type.examples.map((example, exIndex) => (
                         <span
@@ -209,7 +209,7 @@ export default function VehicleProcurementPage() {
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-start">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 Our Network
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -264,14 +264,14 @@ export default function VehicleProcurementPage() {
           {/* Left Side - Steps */}
           <div className={`py-16 lg:py-20 pl-6 sm:pl-8 pr-4 sm:pr-6 lg:pl-6 lg:pr-8 xl:pr-12 ${isMaximized ? "xl:pl-[15%]" : "xl:pl-8"}`}>
             <div>
-              <span className="text-gold font-semibold tracking-wide uppercase text-sm">
+              <span className="text-gold-light font-semibold tracking-wide uppercase text-sm">
                 The Process
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 From Search to Shipment
               </h2>
-              <p className="mt-4 text-white/70 lg:text-lg">
-                Here's how we help you find and acquire your vehicle from the United States.
+              <p className="mt-4 text-white/80 lg:text-lg">
+                Here&apos;s how we help you find and acquire your vehicle from the United States.
               </p>
             </div>
 
@@ -298,11 +298,11 @@ export default function VehicleProcurementPage() {
                         isActive ? "border-gold" : "border-white/30 group-hover:border-white/50"
                       }`}>
                         <span className={`font-bold text-sm transition-all duration-300 ${
-                          isActive ? "text-gold" : "text-white/50 group-hover:text-white"
+                          isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                         }`}>{step.number}</span>
                       </div>
                       <span className={`text-lg font-bold transition-all duration-300 ${
-                        isActive ? "text-gold" : "text-white/60 group-hover:text-white"
+                        isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                       }`}>
                         {step.title}
                       </span>
@@ -331,7 +331,7 @@ export default function VehicleProcurementPage() {
                 <div className="absolute -top-3 left-8 w-6 h-6 bg-gold transform rotate-45" />
 
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-gold font-bold text-2xl">{activeStep.number}</span>
+                  <span className="text-gold-light font-bold text-2xl">{activeStep.number}</span>
                   <h3 className="text-xl lg:text-2xl font-bold text-white">
                     {activeStep.title}
                   </h3>
@@ -378,7 +378,7 @@ export default function VehicleProcurementPage() {
               Ready to Find Your Vehicle?
             </h2>
             <p className="mt-6 text-gray-600 text-lg lg:text-xl max-w-2xl mx-auto">
-              Tell us what you're looking for and we'll search our network to find
+              Tell us what you&apos;re looking for and we&apos;ll search our network to find
               the best options. Professional inspection included.
             </p>
 

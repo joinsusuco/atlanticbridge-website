@@ -15,21 +15,21 @@ export default function DepartureBanner({ variant = "full" }: DepartureBannerPro
     return (
       <div className="bg-navy rounded-2xl overflow-hidden border border-white/10">
         <div className="p-6 lg:p-8">
-          <h3 className="text-gold font-bold tracking-wider uppercase text-sm mb-4">
+          <h3 className="text-gold-light font-bold tracking-wider uppercase text-sm mb-4">
             Next Ocean Departure
           </h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-white/60">Departure</span>
+              <span className="text-white/80">Departure</span>
               <span className="text-white font-bold">{shippingSchedule.departureDate}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-white/60">Est. Arrival</span>
+              <span className="text-white/80">Est. Arrival</span>
               <span className="text-white font-bold">{shippingSchedule.arrivalDate}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-white/60">Book By</span>
-              <span className="text-gold font-bold">{shippingSchedule.bookingDeadline}</span>
+              <span className="text-white/80">Book By</span>
+              <span className="text-gold-light font-bold">{shippingSchedule.bookingDeadline}</span>
             </div>
           </div>
         </div>
@@ -51,25 +51,25 @@ export default function DepartureBanner({ variant = "full" }: DepartureBannerPro
 
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <span className="text-white/70 font-semibold w-36 lg:w-44">DEPARTURE DATE</span>
-              <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <span className="text-white/85 font-semibold w-36 lg:w-44">DEPARTURE DATE</span>
+              <svg className="w-5 h-5 text-gold-light" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
               <span className="text-white font-bold text-lg lg:text-xl">{shippingSchedule.departureDate}</span>
             </div>
             <div className="flex items-center gap-4">
-              <span className="text-white/70 font-semibold w-36 lg:w-44">ARRIVAL DATE</span>
-              <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <span className="text-white/85 font-semibold w-36 lg:w-44">ARRIVAL DATE</span>
+              <svg className="w-5 h-5 text-gold-light" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
               <span className="text-white font-bold text-lg lg:text-xl">{shippingSchedule.arrivalDate}</span>
             </div>
           </div>
 
-          <p className="mt-6 text-gold font-semibold">
+          <p className="mt-6 text-gold-light font-semibold">
             We must receive all shipments by {shippingSchedule.bookingDeadline}
           </p>
-          <p className="mt-2 text-white/50 text-sm">
+          <p className="mt-2 text-white/75 text-sm">
             Please note that all dates are estimated. We have no control of vessel schedule changes.
           </p>
 
@@ -90,6 +90,7 @@ export default function DepartureBanner({ variant = "full" }: DepartureBannerPro
             src="/Roro-transporting.jpg"
             alt="Vehicle shipping via RoRo"
             fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/50 to-transparent" />

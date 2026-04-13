@@ -44,29 +44,6 @@ const values = [
   },
 ];
 
-const milestones = [
-  {
-    year: "Foundation",
-    title: "Built on Experience",
-    description: "Atlantic Bridge was founded by professionals with deep experience in international trade, logistics, and the Gambian market. We understand both sides of the Atlantic.",
-  },
-  {
-    year: "Network",
-    title: "Established Supplier Relationships",
-    description: "We've built a network of trusted US suppliers, dealers, and wholesalers. These relationships allow us to offer competitive pricing and reliable sourcing.",
-  },
-  {
-    year: "Process",
-    title: "Structured Operations",
-    description: "Our operations are built on clear processes: from initial quotes to final delivery. This structure ensures consistency and accountability at every step.",
-  },
-  {
-    year: "Today",
-    title: "Serving The Gambia",
-    description: "We're actively helping Gambian businesses and individuals access American products and vehicles through a service they can trust.",
-  },
-];
-
 const teamValues = [
   "Direct communication - no middlemen or runaround",
   "Responsive support throughout your order",
@@ -89,12 +66,12 @@ export default function AboutPage() {
 
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="max-w-4xl">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
               About Us
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               USA to Gambia{" "}
-              <span className="text-gold">Shipping Company</span>
+              <span className="text-gold-light">Shipping Company</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Atlantic Bridge exports vehicles, products, and cargo from the United States
@@ -109,7 +86,7 @@ export default function AboutPage() {
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 Our Story
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -117,7 +94,7 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
                 International sourcing and shipping can be complicated, expensive, and unreliable.
-                We've seen too many Gambian buyers struggle with unclear pricing, delayed shipments,
+                We&apos;ve seen too many Gambian buyers struggle with unclear pricing, delayed shipments,
                 damaged goods, and suppliers who disappear after payment.
               </p>
               <p className="mt-4 text-gray-600 lg:text-lg leading-relaxed">
@@ -126,7 +103,7 @@ export default function AboutPage() {
                 buyers to access American products and vehicles through a service they can actually trust.
               </p>
               <p className="mt-4 text-gray-600 lg:text-lg leading-relaxed">
-                We're not trying to be the biggest. We're focused on being the most reliable. Every
+                We&apos;re not trying to be the biggest. We&apos;re focused on being the most reliable. Every
                 order matters, every customer relationship is built on follow-through, and every
                 commitment is one we intend to keep.
               </p>
@@ -159,7 +136,7 @@ export default function AboutPage() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               Our Values
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -232,7 +209,7 @@ export default function AboutPage() {
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
                 How We Work
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -240,7 +217,7 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-white/80 lg:text-lg leading-relaxed">
                 We believe in building relationships, not just processing transactions.
-                When you work with us, you get a team that's invested in your success
+                When you work with us, you get a team that&apos;s invested in your success
                 and responsive to your needs.
               </p>
 
@@ -263,20 +240,20 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-bold text-white mb-6">What Sets Us Apart</h3>
                 <div className="space-y-6">
                   <div className="pb-6 border-b border-white/10">
-                    <h4 className="text-gold font-semibold mb-2">Structured Process</h4>
-                    <p className="text-white/70">Clear steps from quote to delivery. You always know where your order stands.</p>
+                    <h4 className="text-gold-light font-semibold mb-2">Structured Process</h4>
+                    <p className="text-white/80">Clear steps from quote to delivery. You always know where your order stands.</p>
                   </div>
                   <div className="pb-6 border-b border-white/10">
-                    <h4 className="text-gold font-semibold mb-2">Quality Verification</h4>
-                    <p className="text-white/70">We inspect products and vehicles before shipping. No surprises on arrival.</p>
+                    <h4 className="text-gold-light font-semibold mb-2">Quality Verification</h4>
+                    <p className="text-white/80">We inspect products and vehicles before shipping. No surprises on arrival.</p>
                   </div>
                   <div className="pb-6 border-b border-white/10">
-                    <h4 className="text-gold font-semibold mb-2">Transparent Pricing</h4>
-                    <p className="text-white/70">Full breakdown of costs upfront. No hidden fees or unexpected charges.</p>
+                    <h4 className="text-gold-light font-semibold mb-2">Transparent Pricing</h4>
+                    <p className="text-white/80">Full breakdown of costs upfront. No hidden fees or unexpected charges.</p>
                   </div>
                   <div>
-                    <h4 className="text-gold font-semibold mb-2">End-to-End Support</h4>
-                    <p className="text-white/70">From sourcing to delivery, we handle everything. You get a single point of contact.</p>
+                    <h4 className="text-gold-light font-semibold mb-2">End-to-End Support</h4>
+                    <p className="text-white/80">From sourcing to delivery, we handle everything. You get a single point of contact.</p>
                   </div>
                 </div>
               </div>
@@ -301,14 +278,14 @@ export default function AboutPage() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center justify-between text-white">
                     <div>
-                      <p className="text-sm text-white/60">From</p>
+                      <p className="text-sm text-white/80">From</p>
                       <p className="font-bold text-lg">United States</p>
                     </div>
                     <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                     <div className="text-right">
-                      <p className="text-sm text-white/60">To</p>
+                      <p className="text-sm text-white/80">To</p>
                       <p className="font-bold text-lg">The Gambia</p>
                     </div>
                   </div>
@@ -317,7 +294,7 @@ export default function AboutPage() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 Our Reach
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -325,22 +302,22 @@ export default function AboutPage() {
               </h2>
               <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
                 Atlantic Bridge operates from the United States with a singular focus:
-                serving buyers in The Gambia. We're positioned to access American suppliers,
+                serving buyers in The Gambia. We&apos;re positioned to access American suppliers,
                 coordinate with US ports, and manage the export process efficiently.
               </p>
               <p className="mt-4 text-gray-600 lg:text-lg leading-relaxed">
-                Our understanding of the Gambian market means we know what works, what's
-                needed, and how to navigate the process. We're not a generic export company -
-                we're built specifically for this route.
+                Our understanding of the Gambian market means we know what works, what&apos;s
+                needed, and how to navigate the process. We&apos;re not a generic export company -
+                we&apos;re built specifically for this route.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500 mb-1">Based In</p>
+                  <p className="text-sm text-gray-600 mb-1">Based In</p>
                   <p className="font-bold text-navy">United States</p>
                 </div>
                 <div className="p-4 bg-gray-50 rounded-xl">
-                  <p className="text-sm text-gray-500 mb-1">Serving</p>
+                  <p className="text-sm text-gray-600 mb-1">Serving</p>
                   <p className="font-bold text-navy">The Gambia</p>
                 </div>
               </div>
@@ -358,7 +335,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-6 text-gray-600 text-lg lg:text-xl max-w-2xl mx-auto">
               Whether you need products, vehicles, or bulk goods from the US,
-              we're here to help. Tell us what you need and let's get started.
+              we&apos;re here to help. Tell us what you need and let&apos;s get started.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -232,7 +232,7 @@ export default function FAQPage() {
 
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
               FAQ
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
@@ -252,7 +252,7 @@ export default function FAQPage() {
             {/* Category Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-28">
-                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
+                <h3 className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-4">
                   Categories
                 </h3>
                 <nav className="space-y-1">
@@ -277,11 +277,11 @@ export default function FAQPage() {
                 <div className="mt-8 p-6 bg-gray-50 rounded-2xl">
                   <h4 className="font-bold text-navy mb-2">Still have questions?</h4>
                   <p className="text-gray-600 text-sm mb-4">
-                    Can't find what you're looking for? We're here to help.
+                    Can&apos;t find what you&apos;re looking for? We&apos;re here to help.
                   </p>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center text-gold font-semibold text-sm hover:text-gold-dark transition-colors"
+                    className="inline-flex items-center text-gold-dark font-semibold text-sm hover:text-gold transition-colors"
                   >
                     Contact Us
                     <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,7 +298,7 @@ export default function FAQPage() {
                 <h2 className="text-2xl font-bold text-navy">
                   {faqCategories.find((c) => c.id === activeCategory)?.title}
                 </h2>
-                <span className="text-gray-400 text-sm">
+                <span className="text-gray-600 text-sm">
                   {filteredFaqs.length} questions
                 </span>
               </div>
@@ -363,7 +363,7 @@ export default function FAQPage() {
               Ready to Get Started?
             </h2>
             <p className="mt-6 text-gray-600 text-lg lg:text-xl max-w-2xl mx-auto">
-              Have a specific request? Tell us what you need and we'll provide
+              Have a specific request? Tell us what you need and we&apos;ll provide
               a detailed quote tailored to your requirements.
             </p>
 

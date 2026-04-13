@@ -141,7 +141,7 @@ export default function BulkPurchasingPage() {
             <div className="flex items-center gap-2 mb-6 text-sm">
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/60 hover:text-gold transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-gold-light transition-colors"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -149,13 +149,13 @@ export default function BulkPurchasingPage() {
                 All Services
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-gold font-bold tracking-wider uppercase">
+              <span className="text-gold-light font-bold tracking-wider uppercase">
                 Bulk Purchasing
               </span>
             </div>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Bulk Import from USA{" "}
-              <span className="text-gold">to Gambia</span>
+              <span className="text-gold-light">to Gambia</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Wholesale shipping to West Africa. Import food staples, retail stock, and
@@ -187,8 +187,8 @@ export default function BulkPurchasingPage() {
       <section id="who-its-for" className="py-20 lg:py-28 bg-white scroll-mt-24">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
-              Who It's For
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
+                Who It&apos;s For
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
               Built for Business Buyers
@@ -220,7 +220,7 @@ export default function BulkPurchasingPage() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               Product Categories
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -269,10 +269,10 @@ export default function BulkPurchasingPage() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 lg:text-lg">
               Need something specific?{" "}
-              <Link href="/quote?service=bulk-purchasing" className="text-gold font-semibold hover:text-gold-dark transition-colors">
+              <Link href="/quote?service=bulk-purchasing" className="text-gold-dark font-semibold hover:text-gold transition-colors">
                 Send us your product list
               </Link>{" "}
-              and we'll source it.
+              and we&apos;ll source it.
             </p>
           </div>
         </div>
@@ -298,7 +298,7 @@ export default function BulkPurchasingPage() {
             </div>
 
             <div className="mt-12 lg:mt-0">
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 Procurement Support
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -307,7 +307,7 @@ export default function BulkPurchasingPage() {
               <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
                 Bulk purchasing from US suppliers involves coordination across multiple
                 vendors, price negotiations, quality verification, and logistics planning.
-                We manage all of this so you don't have to.
+                We manage all of this so you don&apos;t have to.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -334,7 +334,7 @@ export default function BulkPurchasingPage() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               Why Choose Us
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -357,7 +357,7 @@ export default function BulkPurchasingPage() {
                     isEven ? "lg:rounded-r-none" : "lg:rounded-l-none"
                   }`}>
                     <div className="text-center">
-                      <span className="text-6xl lg:text-7xl font-bold text-gold">
+                      <span className="text-6xl lg:text-7xl font-bold text-gold-light">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
@@ -387,14 +387,14 @@ export default function BulkPurchasingPage() {
           {/* Left Side - Steps */}
           <div className={`py-16 lg:py-20 pl-6 sm:pl-8 pr-4 sm:pr-6 lg:pl-6 lg:pr-8 xl:pr-12 ${isMaximized ? "xl:pl-[15%]" : "xl:pl-8"}`}>
             <div>
-              <span className="text-gold font-semibold tracking-wide uppercase text-sm">
+              <span className="text-gold-light font-semibold tracking-wide uppercase text-sm">
                 The Process
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                 How Bulk Purchasing Works
               </h2>
-              <p className="mt-4 text-white/70 lg:text-lg">
-                From your initial product list to delivery in The Gambia, here's how it works.
+              <p className="mt-4 text-white/80 lg:text-lg">
+                From your initial product list to delivery in The Gambia, here&apos;s how it works.
               </p>
             </div>
 
@@ -421,11 +421,11 @@ export default function BulkPurchasingPage() {
                         isActive ? "border-gold" : "border-white/30 group-hover:border-white/50"
                       }`}>
                         <span className={`font-bold text-sm transition-all duration-300 ${
-                          isActive ? "text-gold" : "text-white/50 group-hover:text-white"
+                          isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                         }`}>{step.number}</span>
                       </div>
                       <span className={`text-lg font-bold transition-all duration-300 ${
-                        isActive ? "text-gold" : "text-white/60 group-hover:text-white"
+                        isActive ? "text-gold-light" : "text-white/80 group-hover:text-white"
                       }`}>
                         {step.title}
                       </span>
@@ -454,7 +454,7 @@ export default function BulkPurchasingPage() {
                 <div className="absolute -top-3 left-8 w-6 h-6 bg-gold transform rotate-45" />
 
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-gold font-bold text-2xl">{activeStep.number}</span>
+                  <span className="text-gold-light font-bold text-2xl">{activeStep.number}</span>
                   <h3 className="text-xl lg:text-2xl font-bold text-white">
                     {activeStep.title}
                   </h3>
@@ -476,7 +476,7 @@ export default function BulkPurchasingPage() {
               Ready to Order in Bulk?
             </h2>
             <p className="mt-6 text-gray-600 text-lg lg:text-xl max-w-2xl mx-auto">
-              Send us your product list and we'll get back to you with a detailed quote
+              Send us your product list and we&apos;ll get back to you with a detailed quote
               including pricing, shipping estimates, and timeline.
             </p>
 

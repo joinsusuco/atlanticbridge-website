@@ -1,5 +1,3 @@
-"use client";
-
 import HeroCarousel from "@/components/HeroCarousel";
 import DepartureSection from "@/components/DepartureSection";
 import AboutIntro from "@/components/AboutIntro";

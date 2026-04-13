@@ -1,7 +1,3 @@
-"use client";
-
-import { useIsMaximized } from "@/hooks/useIsMaximized";
-
 const steps = [
   {
     number: "01",
@@ -30,8 +26,6 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const isMaximized = useIsMaximized();
-
   return (
     <section id="how-it-works" className="py-20 lg:py-28 bg-navy relative scroll-mt-24">
       {/* Background Image */}
@@ -40,18 +34,16 @@ export default function HowItWorks() {
         style={{ backgroundImage: "url('/hero-cargo-ship-aerial.jpg')" }}
       />
       <div className="absolute inset-0 bg-navy/80" />
-      <div
-        className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}
-      >
+      <div className="relative px-6 sm:px-8 lg:px-6 xl:px-8 2xl:px-[7.5%]">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <span className="text-gold font-bold tracking-wider uppercase text-base">
+          <span className="text-gold-light font-bold tracking-wider uppercase text-base">
             Our Process
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             How It Works
           </h2>
-          <p className="mt-4 text-white/70 text-lg">
+          <p className="mt-4 text-white/80 text-lg">
             A clear, structured process from your first inquiry to final delivery.
           </p>
         </div>
@@ -80,7 +72,7 @@ export default function HowItWorks() {
                   <div className={`w-16 h-16 rounded-full bg-navy border-2 flex items-center justify-center mx-auto relative z-10 ${
                     index <= 2 ? "border-gold" : "border-white/30"
                   }`}>
-                    <span className={`font-bold text-lg ${index <= 2 ? "text-gold" : "text-white/50"}`}>
+                    <span className={`font-bold text-lg ${index <= 2 ? "text-gold-light" : "text-white/80"}`}>
                       {step.number}
                     </span>
                   </div>
@@ -89,7 +81,7 @@ export default function HowItWorks() {
                   <h3 className="text-xl font-bold text-white mt-6">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-white/60 text-sm leading-relaxed">
+                  <p className="mt-3 text-white/80 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -104,7 +96,7 @@ export default function HowItWorks() {
                 {/* Number + Line */}
                 <div className="flex flex-col items-center">
                   <div className="w-12 h-12 rounded-full bg-navy border-2 border-gold flex items-center justify-center flex-shrink-0">
-                    <span className="text-gold font-bold">{step.number}</span>
+                    <span className="text-gold-light font-bold">{step.number}</span>
                   </div>
                   {index < steps.length - 1 && (
                     <div className="w-0.5 flex-1 bg-white/10 mt-2" />
@@ -116,7 +108,7 @@ export default function HowItWorks() {
                   <h3 className="text-lg font-bold text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-white/60 text-sm leading-relaxed">
+                  <p className="mt-2 text-white/80 text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>

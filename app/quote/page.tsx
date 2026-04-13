@@ -4,6 +4,14 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useIsMaximized } from "@/hooks/useIsMaximized";
+import ImageUpload from "@/components/ImageUpload";
+
+interface UploadedFile {
+  path: string;
+  filename: string;
+  size: number;
+  token: string;
+}
 
 type ServiceType = "product-sourcing" | "bulk-purchasing" | "vehicle-procurement" | "vehicle-shipping" | "cargo-shipping" | null;
 
@@ -185,6 +193,7 @@ function QuotePageContent() {
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [uploadedImages, setUploadedImages] = useState<UploadedFile[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const isMaximized = useIsMaximized();
@@ -276,6 +285,12 @@ function QuotePageContent() {
             cargoDimensions: formData.cargoDimensions,
             cargoDeliveryMethod: formData.cargoDeliveryMethod,
           }),
+          // Uploaded images
+          images: uploadedImages.map((img) => ({
+            path: img.path,
+            filename: img.filename,
+            token: img.token,
+          })),
           // Honeypot field (should be empty)
           website: "",
         }),
@@ -331,7 +346,7 @@ function QuotePageContent() {
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-navy">Quote Request Submitted</h1>
             <p className="mt-4 text-gray-600 text-lg">
-              Thank you for your request. We've received your information and will review it promptly.
+              Thank you for your request. We&apos;ve received your information and will review it promptly.
               Expect to hear from us within 1-2 business days.
             </p>
             <div className="mt-8 p-6 bg-white rounded-2xl border border-gray-200 text-left">
@@ -383,14 +398,14 @@ function QuotePageContent() {
 
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
               Request a Quote
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Get a Shipping Quote to Gambia
             </h1>
             <p className="mt-4 text-white/80 text-lg">
-              Fill out the form below and we'll prepare a detailed quote for you.
+              Fill out the form below and we&apos;ll prepare a detailed quote for you.
             </p>
           </div>
         </div>
@@ -403,7 +418,7 @@ function QuotePageContent() {
             {/* Progress Bar */}
             <div className="mb-10">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-500">
+                <span className="text-sm font-medium text-gray-600">
                   Step {step} of {getTotalSteps()}
                 </span>
                 <span className="text-sm font-medium text-navy">{getStepTitle()}</span>
@@ -435,7 +450,7 @@ function QuotePageContent() {
                     >
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
                         formData.serviceType === service.id
-                          ? "bg-gold text-white"
+                          ? "bg-gold text-navy"
                           : "bg-gray-100 text-gray-600"
                       }`}>
                         {service.icon}
@@ -526,6 +541,8 @@ function QuotePageContent() {
                         </select>
                       </div>
                     </div>
+
+                    <ImageUpload onFilesChange={setUploadedImages} />
                   </div>
                 )}
 
@@ -621,6 +638,8 @@ function QuotePageContent() {
                         </select>
                       </div>
                     </div>
+
+                    <ImageUpload onFilesChange={setUploadedImages} />
                   </div>
                 )}
 
@@ -738,6 +757,8 @@ function QuotePageContent() {
                         </select>
                       </div>
                     </div>
+
+                    <ImageUpload onFilesChange={setUploadedImages} />
                   </div>
                 )}
 
@@ -777,7 +798,7 @@ function QuotePageContent() {
                       {formData.hasVehicle === "no" && (
                         <p className="mt-3 text-sm text-gray-500">
                           Consider our{" "}
-                          <Link href="/quote?service=vehicle-procurement" className="text-gold font-semibold">
+                          <Link href="/quote?service=vehicle-procurement" className="text-gold-dark font-semibold">
                             Vehicle Procurement
                           </Link>{" "}
                           service to help you find a vehicle first.
@@ -844,6 +865,8 @@ function QuotePageContent() {
                             </select>
                           </div>
                         </div>
+
+                        <ImageUpload onFilesChange={setUploadedImages} />
                       </>
                     )}
                   </div>
@@ -892,7 +915,7 @@ function QuotePageContent() {
                               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                           }`}
                         >
-                          I'll drop off
+                          I&apos;ll drop off
                         </button>
                       </div>
                     </div>
@@ -944,6 +967,8 @@ function QuotePageContent() {
                         />
                       </div>
                     </div>
+
+                    <ImageUpload onFilesChange={setUploadedImages} />
                   </div>
                 )}
 

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 const faqs = [
   {
@@ -30,7 +29,6 @@ const faqs = [
 
 export default function FAQPreview() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const isMaximized = useIsMaximized();
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -38,13 +36,11 @@ export default function FAQPreview() {
 
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
-      <div
-        className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}
-      >
+      <div className="px-6 sm:px-8 lg:px-6 xl:px-8 2xl:px-[7.5%]">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-start">
           {/* Left Side - Header + Image */}
           <div className="lg:sticky lg:top-32">
-            <span className="text-gold font-bold tracking-wider uppercase text-base">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-base">
               FAQ
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -61,6 +57,7 @@ export default function FAQPreview() {
                   src="/fake.jpg"
                   alt="Package delivery"
                   fill
+                  sizes="594px"
                   className="object-cover"
                   unoptimized
                 />

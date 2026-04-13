@@ -91,7 +91,7 @@ export default function CargoShippingPage() {
             <div className="flex items-center gap-2 mb-6 text-sm">
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/60 hover:text-gold transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-gold-light transition-colors"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -99,13 +99,13 @@ export default function CargoShippingPage() {
                 All Services
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-gold font-bold tracking-wider uppercase">
+              <span className="text-gold-light font-bold tracking-wider uppercase">
                 Cargo Shipping
               </span>
             </div>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Cargo Shipping from USA{" "}
-              <span className="text-gold">to Gambia</span>
+              <span className="text-gold-light">to Gambia</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Freight forwarding to Banjul port. Ship cargo from USA to West Africa
@@ -133,19 +133,19 @@ export default function CargoShippingPage() {
           <div className="py-6 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-2xl font-bold text-navy">5-7 Weeks</div>
-              <div className="text-sm text-gray-500">Transit Time</div>
+              <div className="text-sm text-gray-600">Transit Time</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-navy">Pickup</div>
-              <div className="text-sm text-gray-500">Or Drop-off</div>
+              <div className="text-sm text-gray-600">Or Drop-off</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-navy">Banjul</div>
-              <div className="text-sm text-gray-500">Destination Port</div>
+              <div className="text-sm text-gray-600">Destination Port</div>
             </div>
             <div>
               <div className="text-2xl font-bold text-navy">All Docs</div>
-              <div className="text-sm text-gray-500">Handled by Us</div>
+              <div className="text-sm text-gray-600">Handled by Us</div>
             </div>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function CargoShippingPage() {
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                 The Process
               </span>
               <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold text-navy">
@@ -206,7 +206,7 @@ export default function CargoShippingPage() {
                     <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
                       activeStep === index
                         ? "bg-gold text-navy"
-                        : "bg-gray-100 text-gray-400"
+                        : "bg-gray-100 text-gray-600"
                     }`}>
                       <span className="font-bold text-sm">{step.number}</span>
                     </div>
@@ -223,7 +223,7 @@ export default function CargoShippingPage() {
                     <div className={`flex-shrink-0 transition-transform duration-300 ${
                       activeStep === index ? "rotate-180" : ""
                     }`}>
-                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </div>
@@ -253,7 +253,7 @@ export default function CargoShippingPage() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Ready to Ship?
             </h2>
-            <p className="mt-4 text-white/70 lg:text-lg">
+            <p className="mt-4 text-white/80 lg:text-lg">
               Tell us what you need to ship and get a quote.
             </p>
 

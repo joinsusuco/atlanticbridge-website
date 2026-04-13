@@ -40,3 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# internal docs
+DESIGN-SYSTEM.md
+
+# email signature files
+email-signature.html
+EMAIL_SIGNATURES.html

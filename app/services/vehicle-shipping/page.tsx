@@ -112,7 +112,7 @@ export default function VehicleShippingPage() {
             <div className="flex items-center gap-2 mb-6 text-sm">
               <Link
                 href="/services"
-                className="inline-flex items-center text-white/60 hover:text-gold transition-colors"
+                className="inline-flex items-center text-white/80 hover:text-gold-light transition-colors"
               >
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -120,13 +120,13 @@ export default function VehicleShippingPage() {
                 All Services
               </Link>
               <span className="text-white/40">/</span>
-              <span className="text-gold font-bold tracking-wider uppercase">
+              <span className="text-gold-light font-bold tracking-wider uppercase">
                 Vehicle Shipping
               </span>
             </div>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Ship Car from USA{" "}
-              <span className="text-gold">to Gambia</span>
+              <span className="text-gold-light">to Gambia</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
               Export your vehicle to Banjul via RoRo or container shipping.
@@ -158,7 +158,7 @@ export default function VehicleShippingPage() {
       <section className="py-20 lg:py-28 bg-white">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               Shipping Options
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -194,7 +194,7 @@ export default function VehicleShippingPage() {
                   <p className="text-gray-600 leading-relaxed">{method.description}</p>
 
                   <div className="mt-6 p-4 bg-gold/10 rounded-xl border border-gold/20">
-                    <p className="text-sm text-gold font-semibold mb-1">Best for:</p>
+                    <p className="text-sm text-gold-dark font-semibold mb-1">Best for:</p>
                     <p className="text-navy font-medium">{method.best_for}</p>
                   </div>
 
@@ -219,7 +219,7 @@ export default function VehicleShippingPage() {
       <section className="py-20 lg:py-28 bg-gray-50">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               End-to-End Service
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -267,7 +267,7 @@ export default function VehicleShippingPage() {
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
             <div>
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
+              <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
                 Shipping Route
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -281,7 +281,7 @@ export default function VehicleShippingPage() {
 
               <div className="mt-8 space-y-6">
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                  <p className="text-white/60 text-sm mb-2">Departure Ports</p>
+                  <p className="text-white/80 text-sm mb-2">Departure Ports</p>
                   <div className="flex flex-wrap gap-2">
                     {routeDetails.departure.map((port, index) => (
                       <span key={index} className="px-3 py-1 bg-white/10 text-white text-sm rounded-full">
@@ -293,11 +293,11 @@ export default function VehicleShippingPage() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                    <p className="text-white/60 text-sm mb-1">Destination</p>
+                    <p className="text-white/80 text-sm mb-1">Destination</p>
                     <p className="text-white font-semibold">{routeDetails.arrival}</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-                    <p className="text-white/60 text-sm mb-1">Transit Time</p>
+                    <p className="text-white/80 text-sm mb-1">Transit Time</p>
                     <p className="text-white font-semibold">{routeDetails.transitTime}</p>
                   </div>
                 </div>
@@ -323,7 +323,7 @@ export default function VehicleShippingPage() {
       <section className="py-20 lg:py-28 bg-white">
         <div className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
               The Process
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
@@ -349,7 +349,7 @@ export default function VehicleShippingPage() {
                   <div className={`flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
                     activeStep === index
                       ? "bg-gold text-navy"
-                      : "bg-gray-100 text-gray-400"
+                      : "bg-gray-100 text-gray-600"
                   }`}>
                     <span className="font-bold">{step.number}</span>
                   </div>
@@ -366,7 +366,7 @@ export default function VehicleShippingPage() {
                   <div className={`flex-shrink-0 transition-transform duration-300 ${
                     activeStep === index ? "rotate-180" : ""
                   }`}>
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>

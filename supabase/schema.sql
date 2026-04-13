@@ -113,6 +113,27 @@ CREATE INDEX IF NOT EXISTS idx_newsletter_email ON newsletter_subscribers (email
 CREATE INDEX IF NOT EXISTS idx_newsletter_subscribed ON newsletter_subscribers (subscribed);
 
 -- ============================================
+-- QUOTE UPLOADS TABLE
+-- Tracks temporary uploaded images before they are attached to a quote
+-- ============================================
+CREATE TABLE IF NOT EXISTS quote_uploads (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  expires_at TIMESTAMP WITH TIME ZONE NOT NULL,
+  path TEXT NOT NULL UNIQUE,
+  filename TEXT NOT NULL,
+  file_size BIGINT NOT NULL CHECK (file_size >= 0),
+  fingerprint TEXT NOT NULL,
+  quote_id UUID REFERENCES quotes(id) ON DELETE SET NULL,
+  attached_at TIMESTAMP WITH TIME ZONE,
+  deleted_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE INDEX IF NOT EXISTS idx_quote_uploads_expires_at ON quote_uploads (expires_at);
+CREATE INDEX IF NOT EXISTS idx_quote_uploads_fingerprint ON quote_uploads (fingerprint);
+CREATE INDEX IF NOT EXISTS idx_quote_uploads_quote_id ON quote_uploads (quote_id);
+
+-- ============================================
 -- ROW LEVEL SECURITY (RLS) POLICIES
 -- Enable RLS for security - DENY all access by default
 -- The service role key bypasses RLS entirely, so no policies needed for API routes
@@ -122,6 +143,7 @@ CREATE INDEX IF NOT EXISTS idx_newsletter_subscribed ON newsletter_subscribers (
 ALTER TABLE quotes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE contacts ENABLE ROW LEVEL SECURITY;
 ALTER TABLE newsletter_subscribers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE quote_uploads ENABLE ROW LEVEL SECURITY;
 
 -- IMPORTANT: We intentionally DO NOT create any permissive policies.
 -- With RLS enabled and no policies, anon and authenticated roles cannot access these tables.
@@ -143,6 +165,7 @@ ALTER TABLE newsletter_subscribers ENABLE ROW LEVEL SECURITY;
 COMMENT ON TABLE quotes IS 'Stores quote requests from the multi-step quote form';
 COMMENT ON TABLE contacts IS 'Stores general contact form submissions';
 COMMENT ON TABLE newsletter_subscribers IS 'Stores newsletter email subscriptions';
+COMMENT ON TABLE quote_uploads IS 'Tracks temporary uploaded quote images and whether they were attached to a saved quote';
 
 COMMENT ON COLUMN quotes.form_data IS 'JSONB field storing service-specific form data (product details, vehicle info, etc.)';
 COMMENT ON COLUMN quotes.service_type IS 'Type of service requested: product-sourcing, bulk-purchasing, vehicle-procurement, vehicle-shipping, cargo-shipping';

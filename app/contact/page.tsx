@@ -124,7 +124,7 @@ export default function ContactPage() {
 
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
               Contact Us
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
@@ -132,7 +132,7 @@ export default function ContactPage() {
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl leading-relaxed">
               Questions about exporting cars, cargo, or products from USA to Banjul?
-              We're here to help.
+              We&apos;re here to help.
             </p>
           </div>
         </div>
@@ -152,8 +152,8 @@ export default function ContactPage() {
                   {method.icon}
                 </div>
                 <h3 className="font-bold text-navy text-xl mb-2">{method.title}</h3>
-                <p className="text-gold font-bold text-lg mb-1 group-hover:underline">{method.value}</p>
-                <p className="text-gray-500 text-sm">{method.description}</p>
+                <p className="text-gold-dark font-bold text-lg mb-1 group-hover:underline">{method.value}</p>
+                <p className="text-gray-600 text-sm">{method.description}</p>
               </a>
             ))}
           </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                   </div>
                   <h2 className="text-2xl font-bold text-navy">Message Sent!</h2>
                   <p className="mt-4 text-gray-600">
-                    Thank you for reaching out. We've received your message and will
+                    Thank you for reaching out. We&apos;ve received your message and will
                     get back to you within 24 hours.
                   </p>
                   <button
@@ -320,7 +320,7 @@ export default function ContactPage() {
                       <span className="font-semibold text-navy group-hover:text-gold transition-colors">
                         {link.title}
                       </span>
-                      <p className="text-gray-500 text-sm mt-1">{link.description}</p>
+                      <p className="text-gray-600 text-sm mt-1">{link.description}</p>
                     </Link>
                   ))}
                 </div>
@@ -329,7 +329,7 @@ export default function ContactPage() {
               {/* Need a Quote? */}
               <div className="bg-navy rounded-2xl p-6 text-center">
                 <h3 className="font-bold text-white mb-2">Need a Quote?</h3>
-                <p className="text-white/70 text-sm mb-4">
+                <p className="text-white/80 text-sm mb-4">
                   For specific pricing on products, vehicles, or shipping, use our quote request form.
                 </p>
                 <Link

@@ -87,7 +87,7 @@ export default function ServicesPage() {
 
         <div className={`relative px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-gold font-bold tracking-wider uppercase text-sm">
+            <span className="text-gold-light font-bold tracking-wider uppercase text-sm">
               Our Services
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
@@ -127,7 +127,7 @@ export default function ServicesPage() {
 
                 {/* Content */}
                 <div className={`mt-10 lg:mt-0 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                  <span className="text-gold font-bold tracking-wider uppercase text-sm">
+                  <span className="text-gold-dark font-bold tracking-wider uppercase text-sm">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-navy leading-tight">
@@ -185,8 +185,8 @@ export default function ServicesPage() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Not Sure Which Service You Need?
             </h2>
-            <p className="mt-6 text-white/70 text-lg lg:text-xl max-w-2xl mx-auto">
-              Tell us what you're looking for and we'll guide you to the right solution.
+            <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl mx-auto">
+              Tell us what you&apos;re looking for and we&apos;ll guide you to the right solution.
               No obligation, just a conversation to understand your needs.
             </p>
 

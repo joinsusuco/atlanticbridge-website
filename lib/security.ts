@@ -1,3 +1,5 @@
+import { createHmac, timingSafeEqual } from "crypto";
+
 /**
  * Security utilities for API routes
  * - Input sanitization
@@ -267,6 +269,116 @@ export function getRequestFingerprint(request: Request): string {
   // Create a simple hash of browser characteristics
   const fingerprint = `${ua.slice(0, 50)}|${acceptLang.slice(0, 20)}|${accept.slice(0, 30)}`;
   return fingerprint;
+}
+
+// ============================================
+// UPLOAD TOKEN SIGNING
+// ============================================
+
+export interface UploadTokenPayload {
+  path: string;
+  filename: string;
+  size: number;
+  fingerprint: string;
+  expiresAt: number;
+}
+
+function base64UrlEncode(input: string): string {
+  return Buffer.from(input, "utf8")
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+}
+
+function base64UrlDecode(input: string): string {
+  const normalized = input.replace(/-/g, "+").replace(/_/g, "/");
+  const padding = normalized.length % 4 === 0 ? "" : "=".repeat(4 - (normalized.length % 4));
+  return Buffer.from(`${normalized}${padding}`, "base64").toString("utf8");
+}
+
+function getUploadTokenSecret(): string {
+  return process.env.UPLOAD_TOKEN_SECRET || process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+}
+
+function signUploadPayload(encodedPayload: string): string {
+  const secret = getUploadTokenSecret();
+  if (!secret) {
+    throw new Error("Missing upload token secret");
+  }
+
+  return createHmac("sha256", secret)
+    .update(encodedPayload)
+    .digest("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/g, "");
+}
+
+export function createUploadToken(
+  payload: Omit<UploadTokenPayload, "expiresAt">,
+  expiresInSeconds: number = 60 * 60
+): string {
+  const fullPayload: UploadTokenPayload = {
+    ...payload,
+    expiresAt: Date.now() + expiresInSeconds * 1000,
+  };
+
+  const encodedPayload = base64UrlEncode(JSON.stringify(fullPayload));
+  const signature = signUploadPayload(encodedPayload);
+  return `${encodedPayload}.${signature}`;
+}
+
+export function verifyUploadToken(
+  token: string,
+  expectedFingerprint: string
+): UploadTokenPayload | null {
+  if (!token || typeof token !== "string") {
+    return null;
+  }
+
+  const [encodedPayload, providedSignature] = token.split(".");
+  if (!encodedPayload || !providedSignature) {
+    return null;
+  }
+
+  const expectedSignature = signUploadPayload(encodedPayload);
+  const provided = Buffer.from(providedSignature);
+  const expected = Buffer.from(expectedSignature);
+
+  if (provided.length !== expected.length || !timingSafeEqual(provided, expected)) {
+    return null;
+  }
+
+  try {
+    const payload = JSON.parse(base64UrlDecode(encodedPayload)) as UploadTokenPayload;
+
+    if (
+      typeof payload.path !== "string" ||
+      typeof payload.filename !== "string" ||
+      typeof payload.size !== "number" ||
+      typeof payload.fingerprint !== "string" ||
+      typeof payload.expiresAt !== "number"
+    ) {
+      return null;
+    }
+
+    if (!payload.path.startsWith("quotes/") || payload.path.includes("..")) {
+      return null;
+    }
+
+    if (payload.fingerprint !== expectedFingerprint) {
+      return null;
+    }
+
+    if (Date.now() > payload.expiresAt) {
+      return null;
+    }
+
+    return payload;
+  } catch {
+    return null;
+  }
 }
 
 // ============================================

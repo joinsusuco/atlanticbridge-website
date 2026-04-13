@@ -92,6 +92,7 @@ export async function sendQuoteNotification(data: {
   preferredContact: string;
   additionalNotes?: string;
   formData: Record<string, unknown>;
+  imageUrls?: { filename: string; url: string }[];
 }): Promise<{ success: boolean; error?: string }> {
   const serviceName = SERVICE_NAMES[data.serviceType] || data.serviceType;
 
@@ -116,6 +117,12 @@ SERVICE DETAILS
 ${formatFormData(data.formData)}
 
 ${data.additionalNotes ? `ADDITIONAL NOTES\n----------------\n${data.additionalNotes}` : ""}
+
+${
+  data.imageUrls && data.imageUrls.length > 0
+    ? `ATTACHED PHOTOS (${data.imageUrls.length})\n------------------\n${data.imageUrls.map((img) => `- ${img.filename}: ${img.url}`).join("\n")}`
+    : ""
+}
 
 ---
 This quote request was submitted via the Atlantic Bridge website.
@@ -180,6 +187,28 @@ This quote request was submitted via the Atlantic Bridge website.
   <div style="background: #ffffff; padding: 24px; border: 1px solid #e9ecef; border-top: none;">
     <h2 style="color: #0a1628; font-size: 18px; margin: 0 0 16px 0; border-bottom: 2px solid #d4af37; padding-bottom: 8px;">Additional Notes</h2>
     <p style="margin: 0; white-space: pre-wrap;">${safeAdditionalNotes}</p>
+  </div>
+  `
+      : ""
+  }
+
+  ${
+    data.imageUrls && data.imageUrls.length > 0
+      ? `
+  <div style="background: #ffffff; padding: 24px; border: 1px solid #e9ecef; border-top: none;">
+    <h2 style="color: #0a1628; font-size: 18px; margin: 0 0 16px 0; border-bottom: 2px solid #d4af37; padding-bottom: 8px;">Attached Photos (${data.imageUrls.length})</h2>
+    <p style="margin: 0 0 12px 0; color: #666; font-size: 13px;">View links below. Links expire in 24 hours.</p>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      ${data.imageUrls
+        .map(
+          (img) => `
+        <a href="${escapeHtml(img.url)}" target="_blank" rel="noopener noreferrer" style="color: #0a1628; text-decoration: underline; word-break: break-all;">
+          ${escapeHtml(img.filename)}
+        </a>
+      `
+        )
+        .join("")}
+    </div>
   </div>
   `
       : ""

@@ -13,7 +13,6 @@ export default function FloatingDepartureBanner() {
       const footer = document.querySelector("footer");
       if (!footer) return;
 
-      const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       // Find the divider (border-t element) in the footer
@@ -56,14 +55,14 @@ export default function FloatingDepartureBanner() {
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <span className="text-gold font-bold text-sm uppercase tracking-wide">
+              <span className="text-gold-light font-bold text-sm uppercase tracking-wide">
                 Next Departure
               </span>
               <span>🇬🇲</span>
             </div>
             <button
               onClick={() => setIsExpanded(false)}
-              className="text-white/60 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -74,27 +73,27 @@ export default function FloatingDepartureBanner() {
           {/* Dates */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-white/60 text-sm">Departure</span>
+              <span className="text-white/80 text-sm">Departure</span>
               <span className="text-white font-bold">{shippingSchedule.departureDate}</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-white/60 text-sm">Est. Arrival</span>
+              <span className="text-white/80 text-sm">Est. Arrival</span>
               <span className="text-white font-bold">{shippingSchedule.arrivalDate}</span>
             </div>
             <div className="flex items-center justify-between pt-2 border-t border-white/10">
-              <span className="text-white/60 text-sm">Book By</span>
-              <span className="text-gold font-bold">{shippingSchedule.bookingDeadline}</span>
+              <span className="text-white/80 text-sm">Book By</span>
+              <span className="text-gold-light font-bold">{shippingSchedule.bookingDeadline}</span>
             </div>
           </div>
 
           {/* Route */}
           <div className="mt-4 pt-4 border-t border-white/10">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-white/60">{shippingSchedule.departurePort}</span>
-              <svg className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+              <span className="text-white/80">{shippingSchedule.departurePort}</span>
+              <svg className="w-4 h-4 text-gold-light" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-              <span className="text-white/60">{shippingSchedule.arrivalPort.replace(", The Gambia", "")}</span>
+              <span className="text-white/80">{shippingSchedule.arrivalPort.replace(", The Gambia", "")}</span>
             </div>
           </div>
 
@@ -107,7 +106,7 @@ export default function FloatingDepartureBanner() {
           </Link>
 
           {/* Disclaimer */}
-          <p className="mt-3 text-white/40 text-xs text-center">
+          <p className="mt-3 text-white/75 text-xs text-center">
             Dates are estimated and subject to change
           </p>
         </div>
