@@ -56,3 +56,5 @@ supabase/schema.sql
 
 # content drafts
 social-media-content.md
+content/
+docs/
