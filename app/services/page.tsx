@@ -119,6 +119,8 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={service.title}
                       fill
+                      sizes="(min-width: 1536px) 560px, (min-width: 1280px) 500px, (min-width: 1024px) 44vw, 100vw"
+                      quality={60}
                       className="object-cover"
                     />
                   </div>

@@ -11,6 +11,18 @@ export const metadata: Metadata = {
     title: "Bulk Import to Gambia from USA | Atlantic Bridge",
     description:
       "Wholesale bulk shipping from USA to Gambia. Import food and retail goods to Banjul.",
+    images: [
+      {
+        url: "https://atlanticbridgeus.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://atlanticbridgeus.com/og-image.png"],
   },
 };
 

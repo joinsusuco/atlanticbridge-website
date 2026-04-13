@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "Atlantic Bridge",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://atlanticbridgeus.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Atlantic Bridge | Ship to Gambia from USA",
     description:
       "Ship cars, products, and cargo from USA to Gambia. Export to Banjul with reliable West Africa shipping.",
-    images: ["/og-image.png"],
+    images: ["https://atlanticbridgeus.com/og-image.png"],
   },
 };
 

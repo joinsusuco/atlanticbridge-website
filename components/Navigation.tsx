@@ -205,7 +205,7 @@ export default function Navigation() {
             {/* Phone Contact - hidden until 2xl */}
             <div className="hidden 2xl:flex items-center gap-3">
               <a
-                href="tel:+12025551234"
+                href="tel:+12064247818"
                 className="w-12 h-12 rounded-lg bg-navy-light/50 border border-white/10 flex items-center justify-center hover:border-gold/50 transition-all duration-200"
               >
                 <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,8 +214,8 @@ export default function Navigation() {
               </a>
               <div className="flex flex-col whitespace-nowrap">
                 <span className="text-xs text-white/60 uppercase tracking-wide">Call Us</span>
-                <a href="tel:+12025551234" className="text-white font-semibold hover:text-gold transition-colors">
-                  +1 (202) 555-1234
+                <a href="tel:+12064247818" className="text-white font-semibold hover:text-gold transition-colors">
+                  +1 (206) 424-7818
                 </a>
               </div>
             </div>

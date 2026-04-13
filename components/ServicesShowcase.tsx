@@ -112,7 +112,8 @@ export default function ServicesShowcase() {
                 src={service.image}
                 alt={service.title}
                 fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1536px) 760px, (min-width: 1280px) 640px, (min-width: 1024px) 48vw, 100vw"
+                quality={60}
                 className="object-cover"
               />
               {/* Gradient overlay for readability */}

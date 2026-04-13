@@ -11,6 +11,18 @@ export const metadata: Metadata = {
     title: "Buy American Cars for Gambia | Atlantic Bridge",
     description:
       "Buy cars from USA and import to Gambia. American vehicles shipped to Banjul, West Africa.",
+    images: [
+      {
+        url: "https://atlanticbridgeus.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://atlanticbridgeus.com/og-image.png"],
   },
 };
 

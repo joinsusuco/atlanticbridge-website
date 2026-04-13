@@ -47,7 +47,8 @@ export default function WhyChooseUs() {
                     src="/hero-cargo-ship-aerial.jpg"
                     alt="Cargo ship operations"
                     fill
-                    sizes="(min-width: 640px) 224px, 192px"
+                    sizes="(min-width: 1024px) 224px, (min-width: 640px) 192px, 160px"
+                    quality={60}
                     className="object-cover"
                   />
                 </div>
@@ -58,7 +59,8 @@ export default function WhyChooseUs() {
                     src="/gallery-car-loading.jpg"
                     alt="Vehicle loading"
                     fill
-                    sizes="(min-width: 640px) 224px, 192px"
+                    sizes="(min-width: 1024px) 224px, (min-width: 640px) 192px, 160px"
+                    quality={55}
                     className="object-cover"
                   />
                   {/* Gold corner accent */}
@@ -71,7 +73,8 @@ export default function WhyChooseUs() {
                     src="/gallery-container-appliances.jpg"
                     alt="Container with appliances"
                     fill
-                    sizes="(min-width: 640px) 224px, 192px"
+                    sizes="(min-width: 1024px) 224px, (min-width: 640px) 192px, 160px"
+                    quality={55}
                     className="object-cover"
                   />
                 </div>

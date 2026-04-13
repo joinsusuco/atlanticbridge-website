@@ -11,6 +11,18 @@ export const metadata: Metadata = {
     title: "Shipping & Export Services to Gambia | Atlantic Bridge",
     description:
       "Ship cars, cargo, and products from USA to Gambia. Export services to Banjul, West Africa.",
+    images: [
+      {
+        url: "https://atlanticbridgeus.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://atlanticbridgeus.com/og-image.png"],
   },
 };
 
