@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest } from "next/server";
+import { escapeHtml } from "@/lib/security";
 
 const FORWARD_TO_EMAIL = "atlanticbridgeus@gmail.com";
 const FROM_EMAIL = "Atlantic Bridge <noreply@atlanticbridgeus.com>";
@@ -101,11 +102,35 @@ function parseSender(headerFrom: string, topLevelFrom: string) {
   };
 }
 
+function isAuthorizedWebhook(request: NextRequest): boolean {
+  const webhookSecret = process.env.RESEND_INBOUND_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    return false;
+  }
+
+  const authHeader = request.headers.get("authorization");
+  const bearerToken = authHeader?.startsWith("Bearer ")
+    ? authHeader.slice("Bearer ".length).trim()
+    : null;
+  const headerToken = request.headers.get("x-webhook-secret");
+  const queryToken = request.nextUrl.searchParams.get("secret");
+
+  return (
+    bearerToken === webhookSecret ||
+    headerToken === webhookSecret ||
+    queryToken === webhookSecret
+  );
+}
+
 /**
  * Webhook endpoint for Resend inbound emails
  * Receives emails sent to info@atlanticbridgeus.com and forwards them to Gmail
  */
 export async function POST(request: NextRequest) {
+  if (!isAuthorizedWebhook(request)) {
+    return Response.json({ success: false, error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const rawPayload = await request.json();
     const payload = getInboundPayload(rawPayload);
@@ -141,9 +166,9 @@ ${resolvedText}
       ? `
 <div style="border-left: 2px solid #ccc; padding-left: 16px; margin-bottom: 16px; color: #666;">
   <p><strong>---------- Forwarded message ----------</strong></p>
-  <p><strong>From:</strong> ${senderName} &lt;${senderEmail}&gt;</p>
-  <p><strong>To:</strong> ${recipient}</p>
-  <p><strong>Subject:</strong> ${resolvedSubject}</p>
+  <p><strong>From:</strong> ${escapeHtml(senderName)} &lt;${escapeHtml(senderEmail)}&gt;</p>
+  <p><strong>To:</strong> ${escapeHtml(recipient)}</p>
+  <p><strong>Subject:</strong> ${escapeHtml(resolvedSubject)}</p>
 </div>
 ${resolvedHtml}
 `.trim()
@@ -161,7 +186,10 @@ ${resolvedHtml}
 
     if (error) {
       console.error("Failed to forward inbound email:", error);
-      return Response.json({ success: false, error: error.message }, { status: 500 });
+      return Response.json(
+        { success: false, error: "Failed to process inbound email" },
+        { status: 500 }
+      );
     }
 
     console.log(`Forwarded inbound email from ${senderEmail} to ${FORWARD_TO_EMAIL}`);
@@ -177,5 +205,5 @@ ${resolvedHtml}
 
 // Resend may send a GET request to verify the webhook
 export async function GET() {
-  return Response.json({ status: "ok", endpoint: "inbound-email-webhook" });
+  return Response.json({ error: "Method not allowed" }, { status: 405 });
 }

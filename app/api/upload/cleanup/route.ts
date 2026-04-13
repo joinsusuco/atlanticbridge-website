@@ -56,6 +56,6 @@ export async function POST(request: Request) {
   return handleCleanup(request);
 }
 
-export async function GET(request: Request) {
-  return handleCleanup(request);
+export async function GET() {
+  return errorResponse("Method not allowed", 405);
 }
