@@ -53,3 +53,6 @@ EMAIL_SIGNATURES.html
 # supabase setup files (run manually, not deployed)
 supabase-storage-setup.sql
 supabase/schema.sql
+
+# content drafts
+social-media-content.md
