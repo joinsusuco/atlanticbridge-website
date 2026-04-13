@@ -43,7 +43,13 @@ next-env.d.ts
 
 # internal docs
 DESIGN-SYSTEM.md
+CLAUDE.md
+AGENTS.md
 
 # email signature files
 email-signature.html
 EMAIL_SIGNATURES.html
+
+# supabase setup files (run manually, not deployed)
+supabase-storage-setup.sql
+supabase/schema.sql
