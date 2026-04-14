@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useIsMaximized } from "@/hooks/useIsMaximized";
 import ImageUpload from "@/components/ImageUpload";
@@ -190,6 +190,8 @@ const vehicleTypes = [
 ];
 
 function QuotePageContent() {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -198,13 +200,43 @@ function QuotePageContent() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const isMaximized = useIsMaximized();
 
-  // Check for service parameter in URL
+  const updateQuoteUrl = (nextStep: number, nextService?: ServiceType) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    params.set("step", String(nextStep));
+
+    const resolvedService = nextService ?? formData.serviceType;
+    if (resolvedService) {
+      params.set("service", resolvedService);
+    } else {
+      params.delete("service");
+    }
+
+    router.push(`${pathname}?${params.toString()}`, { scroll: false });
+  };
+
+  // Initialize and sync step/service from URL
   useEffect(() => {
     const service = searchParams.get("service");
-    if (service && services.some((s) => s.id === service)) {
-      setFormData((prev) => ({ ...prev, serviceType: service as ServiceType }));
-      setStep(2);
+    const stepParam = Number(searchParams.get("step"));
+    const serviceIsValid = Boolean(service && services.some((s) => s.id === service));
+    const nextService = serviceIsValid ? (service as ServiceType) : null;
+
+    setFormData((prev) =>
+      prev.serviceType === nextService ? prev : { ...prev, serviceType: nextService }
+    );
+
+    if (Number.isFinite(stepParam) && stepParam >= 1 && stepParam <= 3) {
+      setStep(stepParam);
+      return;
     }
+
+    if (serviceIsValid) {
+      setStep(2);
+      return;
+    }
+
+    setStep(1);
   }, [searchParams]);
 
   const updateFormData = (field: keyof FormData, value: string | string[]) => {
@@ -223,10 +255,20 @@ function QuotePageContent() {
   const selectService = (serviceId: ServiceType) => {
     setFormData((prev) => ({ ...prev, serviceType: serviceId }));
     setStep(2);
+    updateQuoteUrl(2, serviceId);
   };
 
-  const nextStep = () => setStep((prev) => prev + 1);
-  const prevStep = () => setStep((prev) => prev - 1);
+  const nextStep = () => {
+    const next = Math.min(step + 1, getTotalSteps());
+    setStep(next);
+    updateQuoteUrl(next);
+  };
+
+  const prevStep = () => {
+    const previous = Math.max(step - 1, 1);
+    setStep(previous);
+    updateQuoteUrl(previous);
+  };
 
   const [submitError, setSubmitError] = useState<string | null>(null);
 
