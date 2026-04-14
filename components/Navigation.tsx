@@ -92,7 +92,7 @@ export default function Navigation() {
               alt="Atlantic Bridge"
               width={100}
               height={100}
-              className="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] xl:w-[100px] xl:h-[100px] object-contain flex-shrink-0"
+              className="w-[58px] h-auto sm:w-[72px] sm:h-auto xl:w-[100px] xl:h-auto object-contain object-left flex-shrink-0 self-center"
               priority
             />
             <span
