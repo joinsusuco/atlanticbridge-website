@@ -21,6 +21,15 @@ export const metadata: Metadata = {
   title: "Atlantic Bridge | Ship to Gambia from USA - Vehicles, Products & Cargo",
   description:
     "Ship to Gambia from USA. Export vehicles, products, and cargo to Banjul. Buy American cars, furniture, and bulk goods with reliable shipping to West Africa.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico?v=2", sizes: "48x48" },
+      { url: "/favicon-16x16.png?v=2", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=2",
+    apple: { url: "/apple-touch-icon.png?v=2", sizes: "180x180", type: "image/png" },
+  },
   manifest: "/manifest.json",
   openGraph: {
     title: "Atlantic Bridge | Ship to Gambia from USA",
