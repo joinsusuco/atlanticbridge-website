@@ -96,7 +96,7 @@ export default function Navigation() {
               priority
             />
             <span
-              className="text-[1.45rem] leading-none sm:text-3xl font-bold tracking-tight text-gold truncate"
+              className="text-[1.45rem] leading-tight sm:text-3xl font-bold tracking-tight text-gold truncate"
             >
               Atlantic Bridge
             </span>
