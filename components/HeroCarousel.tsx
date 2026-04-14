@@ -71,7 +71,7 @@ export default function HeroCarousel() {
   }, [nextSlide]);
 
   return (
-    <section className="relative h-[90vw] max-h-[580px] sm:h-[75vw] sm:max-h-[660px] md:h-[65vw] md:max-h-[768px] lg:h-[55vw] lg:max-h-[850px] xl:h-[calc(100vh-100px)] xl:max-h-none 2xl:h-screen flex items-center overflow-hidden bg-navy">
+    <section className="relative pt-[78px] sm:pt-[88px] xl:pt-0 min-h-[540px] h-[100svh] max-h-[680px] sm:h-[75vw] sm:max-h-[660px] md:h-[65vw] md:max-h-[768px] lg:min-h-0 lg:h-[55vw] lg:max-h-[850px] xl:h-[calc(100vh-100px)] xl:max-h-none 2xl:h-screen flex items-center overflow-hidden bg-navy">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -95,7 +95,7 @@ export default function HeroCarousel() {
       ))}
 
       {/* Hero Content - Left Aligned */}
-      <div className={`relative z-10 w-full pt-20 sm:pt-24 md:pt-0 px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
+      <div className={`relative z-10 w-full pt-4 sm:pt-6 md:pt-0 px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Text Content */}
           <div className="relative">
@@ -108,7 +108,7 @@ export default function HeroCarousel() {
                     : "opacity-0 absolute inset-0 pointer-events-none"
                 }`}
               >
-                <div className="max-w-[60%] lg:max-w-none select-none">
+                <div className="max-w-[72%] sm:max-w-[60%] lg:max-w-none select-none">
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white leading-tight">
                     {slide.heading}
                   </h1>

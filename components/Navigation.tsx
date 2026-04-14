@@ -84,19 +84,19 @@ export default function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy">
       <nav className="px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-[7.5%]">
-        <div className="flex items-center justify-between h-[100px]">
+        <div className="flex items-center justify-between h-[78px] sm:h-[88px] xl:h-[100px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 h-full">
+          <Link href="/" className="flex items-center gap-1 sm:gap-2 h-full min-w-0">
             <Image
               src="/logo.svg"
               alt="Atlantic Bridge"
               width={100}
               height={100}
-              className="w-[100px] h-[100px] object-contain"
+              className="w-[58px] h-[58px] sm:w-[72px] sm:h-[72px] xl:w-[100px] xl:h-[100px] object-contain flex-shrink-0"
               priority
             />
             <span
-              className="text-2xl sm:text-3xl font-bold tracking-tight text-gold"
+              className="text-[1.45rem] leading-none sm:text-3xl font-bold tracking-tight text-gold truncate"
             >
               Atlantic Bridge
             </span>
@@ -288,9 +288,9 @@ export default function Navigation() {
                 alt="Atlantic Bridge"
                 width={48}
                 height={48}
-                className="w-12 h-12 object-contain"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
               />
-              <span className="text-2xl font-bold tracking-tight text-gold">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-gold">
                 Atlantic Bridge
               </span>
             </Link>
