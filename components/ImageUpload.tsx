@@ -197,10 +197,10 @@ export default function ImageUpload({
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onClick={() => inputRef.current?.click()}
-        className={`relative border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-colors ${
+        className={`relative border-2 border-dashed rounded-xl p-6 text-center cursor-pointer touch-manipulation select-none transition-colors ${
           isUploading
             ? "border-gold/50 bg-gold/5"
-            : "border-gray-300 hover:border-gold hover:bg-gold/5"
+            : "border-gray-300 hover:border-gold hover:bg-gold/5 active:bg-gold/10"
         }`}
       >
         <input
@@ -262,7 +262,7 @@ export default function ImageUpload({
 
       {/* Error Message */}
       {error && (
-        <p className="text-sm text-red-600 flex items-center gap-1">
+        <p className="text-sm text-red-600 flex items-start gap-1 leading-snug">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"

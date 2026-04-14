@@ -6,8 +6,8 @@ import FloatingDepartureBanner from "./FloatingDepartureBanner";
 export default function FloatingDepartureBannerWrapper() {
   const pathname = usePathname();
 
-  // Don't show on homepage (it has its own departure section)
-  if (pathname === "/") return null;
+  // Don't show on homepage or quote flow where it can obstruct form actions on mobile
+  if (pathname === "/" || pathname === "/quote") return null;
 
   return <FloatingDepartureBanner />;
 }

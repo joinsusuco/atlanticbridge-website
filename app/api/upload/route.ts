@@ -228,6 +228,19 @@ export async function POST(request: NextRequest) {
 
       if (!pendingUpload.success) {
         await deleteStorageFiles([storagePath]);
+
+        const setupIncomplete =
+          pendingUpload.error?.includes("quote_uploads") ||
+          pendingUpload.error?.includes("relation") ||
+          pendingUpload.error?.includes("does not exist");
+
+        if (setupIncomplete) {
+          return errorResponse(
+            "Image uploads are temporarily unavailable because upload tracking is not fully configured yet. You can continue without photos for now.",
+            503
+          );
+        }
+
         return errorResponse("Failed to register uploaded file. Please try again.", 500);
       }
 
