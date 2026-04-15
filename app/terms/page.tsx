@@ -170,14 +170,6 @@ export default function TermsPage() {
         <div className="px-6 sm:px-8 lg:px-6 xl:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-10">
-              <div className="mb-10 p-6 rounded-2xl bg-navy/5 border border-navy/10">
-                <p className="text-sm text-gray-700 leading-7">
-                  These Terms are intended to protect Atlantic Bridge&apos;s business operations,
-                  website, and commercial relationships. They should still be reviewed by your legal
-                  counsel before relying on them as final production legal text.
-                </p>
-              </div>
-
               <div className="space-y-10">
                 {sections.map((section) => (
                   <section key={section.title}>

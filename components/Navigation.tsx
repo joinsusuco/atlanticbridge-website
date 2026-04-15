@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useIsMaximized } from "@/hooks/useIsMaximized";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -68,6 +69,7 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const isMaximized = useIsMaximized();
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -83,7 +85,7 @@ export default function Navigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy">
-      <nav className="px-2 sm:px-4 lg:px-6 xl:px-8 2xl:px-[7.5%]">
+      <nav className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
         <div className="flex items-center justify-between h-[78px] sm:h-[88px] xl:h-[100px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1 sm:gap-2 h-full min-w-0">
