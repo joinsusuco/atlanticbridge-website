@@ -71,7 +71,7 @@ export default function HeroCarousel() {
   }, [nextSlide]);
 
   return (
-    <section className="relative pt-[78px] sm:pt-[88px] xl:pt-0 min-h-[540px] h-[100svh] max-h-[680px] sm:h-[75vw] sm:max-h-[660px] md:h-[65vw] md:max-h-[768px] lg:min-h-0 lg:h-[55vw] lg:max-h-[850px] xl:h-[calc(100vh-100px)] xl:max-h-none 2xl:h-screen flex items-center overflow-hidden bg-navy">
+    <section className="relative pt-[78px] sm:pt-[88px] xl:pt-0 min-h-[480px] h-[75svh] max-h-[580px] sm:h-[75vw] sm:max-h-[660px] md:h-[65vw] md:max-h-[768px] lg:min-h-0 lg:h-[55vw] lg:max-h-[850px] xl:h-[calc(100vh-100px)] xl:max-h-none 2xl:h-screen flex items-center overflow-hidden bg-navy">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
