@@ -32,8 +32,8 @@ body {
 
 /* Bump description/paragraph text across the site */
 p, li, label, td, span:not([class*="font-bold"]):not([class*="font-semibold"]) {
-  font-size: 1.08em;
-  line-height: 1.75;
+  font-size: 1em;
+  line-height: 1.7;
 }
 
 /* Base font size bump — scales all rem-based sizes site-wide */
