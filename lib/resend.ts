@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { escapeHtml } from "./security";
 
 // Email recipient (notifications go to Gmail)
-const NOTIFICATION_EMAIL = "kalajulasxpress@gmail.com";
+const NOTIFICATION_EMAIL = "ship@kalajulasxpress.com";
 const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.com>";
 
 // Lazy initialization of Resend client

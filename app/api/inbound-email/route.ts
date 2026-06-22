@@ -2,7 +2,7 @@ import { Resend } from "resend";
 import { NextRequest } from "next/server";
 import { escapeHtml } from "@/lib/security";
 
-const FORWARD_TO_EMAIL = "kalajulasxpress@gmail.com";
+const FORWARD_TO_EMAIL = "ship@kalajulasxpress.com";
 const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.com>";
 
 // Lazy initialization of Resend client
