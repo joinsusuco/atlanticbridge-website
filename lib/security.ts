@@ -426,7 +426,11 @@ const ALLOWED_ORIGINS = [
   "http://localhost:3001",
   "https://kalajulasxpress.com",
   "https://www.kalajulasxpress.com",
-  // Add staging/preview URLs if needed
+  "https://kalajulasxpress.co",
+  "https://www.kalajulasxpress.co",
+  // Allow Vercel preview/production deployments
+  ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
+  ...(process.env.VERCEL_PROJECT_PRODUCTION_URL ? [`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`] : []),
 ];
 
 /**
