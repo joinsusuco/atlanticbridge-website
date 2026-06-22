@@ -3,9 +3,9 @@
 
 export const shippingSchedule = {
   // Next departure details
-  departureDate: "May 15, 2026",
-  arrivalDate: "June 20, 2026",
-  bookingDeadline: "May 5, 2026",
+  departureDate: "TBD",
+  arrivalDate: "TBD",
+  bookingDeadline: "TBD",
 
   // Route information
   departurePort: "Seattle-Tacoma, WA",

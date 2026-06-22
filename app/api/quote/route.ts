@@ -31,6 +31,7 @@ const quoteSchema = z.object({
     "vehicle-procurement",
     "vehicle-shipping",
     "cargo-shipping",
+    "gp-shipping",
   ]),
   fullName: z.string().min(2).max(100),
   email: z.string().email().max(254),
@@ -77,6 +78,14 @@ const quoteSchema = z.object({
   cargoEstimatedWeight: z.string().max(50).optional(),
   cargoDimensions: z.string().max(200).optional(),
   cargoDeliveryMethod: z.string().max(50).optional(),
+
+  // GP Shipping fields
+  gpDirection: z.string().max(50).optional(),
+  gpParcelDescription: z.string().max(5000).optional(),
+  gpParcelWeight: z.string().max(50).optional(),
+  gpDestinationCity: z.string().max(200).optional(),
+  gpOriginCity: z.string().max(200).optional(),
+  gpUrgency: z.string().max(50).optional(),
 
   // Image uploads (already uploaded to storage)
   images: z
@@ -195,6 +204,15 @@ export async function POST(request: Request) {
         formData.cargoEstimatedWeight = sanitizeText(data.cargoEstimatedWeight, 50);
         formData.cargoDimensions = sanitizeText(data.cargoDimensions, 200);
         formData.cargoDeliveryMethod = sanitizeText(data.cargoDeliveryMethod, 50);
+        break;
+
+      case "gp-shipping":
+        formData.gpDirection = sanitizeText(data.gpDirection, 50);
+        formData.gpParcelDescription = sanitizeText(data.gpParcelDescription, 5000);
+        formData.gpParcelWeight = sanitizeText(data.gpParcelWeight, 50);
+        formData.gpDestinationCity = sanitizeText(data.gpDestinationCity, 200);
+        formData.gpOriginCity = sanitizeText(data.gpOriginCity, 200);
+        formData.gpUrgency = sanitizeText(data.gpUrgency, 50);
         break;
     }
 

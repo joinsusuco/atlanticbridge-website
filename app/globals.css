@@ -4,9 +4,9 @@
   /* Brand Colors */
   --navy: #1a365d;
   --navy-dark: #0f2341;
-  --gold: #d69e2e;
-  --gold-light: #ecc94b;
-  --gold-dark: #92400e;
+  --gold: #f07c00;
+  --gold-light: #ff9a2e;
+  --gold-dark: #c96400;
 
   /* Semantic Colors */
   --background: #ffffff;
@@ -30,8 +30,15 @@ body {
   font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
 }
 
-/* Smooth scroll behavior */
+/* Bump description/paragraph text across the site */
+p, li, label, td, span:not([class*="font-bold"]):not([class*="font-semibold"]) {
+  font-size: 1.15em;
+  line-height: 1.8;
+}
+
+/* Base font size bump — scales all rem-based sizes site-wide */
 html {
+  font-size: 130%;
   scroll-behavior: smooth;
 }
 

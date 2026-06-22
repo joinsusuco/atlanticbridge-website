@@ -45,6 +45,14 @@ const services = [
     image: "/cargo.png",
     href: "/services/cargo-shipping",
   },
+  {
+    id: "gp-shipping",
+    title: "GP Shipping",
+    description:
+      "Consolidated parcel shipping between Seattle and West Africa. Send to Senegal and Gambia — affordable, two-way service.",
+    image: "/fake.jpg",
+    href: "/services/gp-shipping",
+  },
 ];
 
 export default function ServicesShowcase() {

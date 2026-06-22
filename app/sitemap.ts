@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://atlanticbridgeus.com";
+  const baseUrl = "https://kalajulasxpress.co";
 
   return [
     {
@@ -36,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/services/cargo-shipping`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/gp-shipping`,
       changeFrequency: "monthly",
       priority: 0.8,
     },

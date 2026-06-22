@@ -63,6 +63,16 @@ const serviceLinks = [
       </svg>
     ),
   },
+  {
+    href: "/services/gp-shipping",
+    label: "GP Shipping",
+    description: "Consolidated parcels to West Africa",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Navigation() {
@@ -86,29 +96,24 @@ export default function Navigation() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy">
       <nav className={`px-6 sm:px-8 lg:px-6 ${isMaximized ? "xl:px-[7.5%]" : "xl:px-8"}`}>
-        <div className="flex items-center justify-between h-[78px] sm:h-[88px] xl:h-[100px]">
+        <div className="flex items-center justify-between h-[88px] sm:h-[100px] xl:h-[116px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 sm:gap-2 h-full min-w-0">
+          <Link href="/" className="flex items-center h-full min-w-0">
             <Image
-              src="/logo.svg"
-              alt="Atlantic Bridge"
-              width={100}
-              height={100}
-              className="w-[58px] h-auto sm:w-[72px] sm:h-auto xl:w-[100px] xl:h-auto object-contain object-left flex-shrink-0 self-center"
+              src="/Logo A-02.png"
+              alt="Kalajulas Xpress"
+              width={320}
+              height={90}
+              className="w-[160px] h-auto sm:w-[200px] sm:h-auto xl:w-[240px] xl:h-auto object-contain object-left flex-shrink-0 self-center"
               priority
             />
-            <span
-              className="text-[1.45rem] leading-tight sm:text-3xl font-bold tracking-tight text-gold truncate"
-            >
-              Atlantic Bridge
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden xl:flex items-center gap-8">
             <Link
               href="/"
-              className="text-lg font-bold tracking-wide transition-colors text-white hover:text-gold"
+              className="text-2xl font-bold tracking-wide transition-colors text-white hover:text-gold"
             >
               Home
             </Link>
@@ -120,7 +125,7 @@ export default function Navigation() {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button
-                className="flex items-center gap-1 text-lg font-bold tracking-wide transition-colors text-white hover:text-gold"
+                className="flex items-center gap-1 text-2xl font-bold tracking-wide transition-colors text-white hover:text-gold"
               >
                 Services
                 <svg
@@ -185,7 +190,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-bold tracking-wide transition-colors text-white hover:text-gold"
+                className="text-2xl font-bold tracking-wide transition-colors text-white hover:text-gold"
                 onClick={(e) => {
                   if (link.href.startsWith("/#")) {
                     const id = link.href.substring(2);
@@ -207,7 +212,7 @@ export default function Navigation() {
             {/* Phone Contact - hidden until 2xl */}
             <div className="hidden 2xl:flex items-center gap-3">
               <a
-                href="tel:+12064247818"
+                href="tel:+14255436578"
                 className="w-12 h-12 rounded-lg bg-navy-light/50 border border-white/10 flex items-center justify-center hover:border-gold/50 transition-all duration-200"
               >
                 <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,8 +221,8 @@ export default function Navigation() {
               </a>
               <div className="flex flex-col whitespace-nowrap">
                 <span className="text-xs text-white/60 uppercase tracking-wide">Call Us</span>
-                <a href="tel:+12064247818" className="text-white font-semibold hover:text-gold transition-colors">
-                  +1 (206) 424-7818
+                <a href="tel:+14255436578" className="text-white font-semibold hover:text-gold transition-colors">
+                  +1 (425) 543-6578
                 </a>
               </div>
             </div>
@@ -227,7 +232,7 @@ export default function Navigation() {
 
             <Link
               href="/quote"
-              className="inline-flex items-center px-6 py-3 text-base font-bold rounded-full bg-gold text-navy hover:bg-gold-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              className="inline-flex items-center px-6 py-3 text-base font-bold rounded-full bg-gold text-white hover:bg-gold-light hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             >
               Request a Quote
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -240,7 +245,7 @@ export default function Navigation() {
           <div className="xl:hidden flex items-center gap-4">
             <Link
               href="/quote"
-              className="hidden min-[980px]:inline-flex items-center px-4 py-2 text-sm font-bold rounded-full bg-gold text-navy hover:bg-gold-light transition-all duration-200"
+              className="hidden min-[980px]:inline-flex items-center px-4 py-2 text-sm font-bold rounded-full bg-gold text-white hover:bg-gold-light transition-all duration-200"
             >
               Request a Quote
             </Link>
@@ -282,19 +287,16 @@ export default function Navigation() {
           <div className="flex items-center justify-between p-4 border-b border-white/10">
             <Link
               href="/"
-              className="flex items-center gap-1"
+              className="flex items-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <Image
-                src="/logo.svg"
-                alt="Atlantic Bridge"
-                width={48}
-                height={48}
-                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                src="/Logo A-02.png"
+                alt="Kalajulas Xpress"
+                width={240}
+                height={68}
+                className="w-[150px] h-auto sm:w-[180px] sm:h-auto object-contain"
               />
-              <span className="text-xl sm:text-2xl font-bold tracking-tight text-gold">
-                Atlantic Bridge
-              </span>
             </Link>
             <button
               type="button"
@@ -353,7 +355,7 @@ export default function Navigation() {
               </button>
               <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  isMobileServicesOpen ? "max-h-80" : "max-h-0"
+                  isMobileServicesOpen ? "max-h-96" : "max-h-0"
                 }`}
               >
                 {serviceLinks.map((service) => (

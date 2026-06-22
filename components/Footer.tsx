@@ -82,17 +82,14 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
             {/* Logo & Description */}
             <div className="lg:col-span-1">
-              <Link href="/" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center">
                 <Image
-                  src="/logo.svg"
-                  alt="Atlantic Bridge"
-                  width={60}
-                  height={60}
-                  className="w-14 h-14 object-contain"
+                  src="/Logo A-02.png"
+                  alt="Kalajulas Xpress"
+                  width={240}
+                  height={68}
+                  className="w-[180px] h-auto object-contain"
                 />
-                <span className="text-xl font-bold text-gold-light">
-                  Atlantic Bridge
-                </span>
               </Link>
               <p className="mt-4 text-white/80 text-base leading-relaxed">
                 Connecting US supply with Gambian demand. Sourcing products, vehicles, and bulk goods through a structured, reliable process.
@@ -111,20 +108,34 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white/75 text-base mb-1">Phone:</p>
-                  <a
-                    href="tel:+12064247818"
-                    className="text-white/80 text-base hover:text-gold transition-colors"
-                  >
-                    +1 (206) 424-7818
-                  </a>
+                  <div className="space-y-1">
+                    <a
+                      href="tel:+14255436578"
+                      className="block text-white/80 text-base hover:text-gold transition-colors"
+                    >
+                      +1 (425) 543-6578
+                    </a>
+                    <a
+                      href="tel:+221776022233"
+                      className="block text-white/80 text-base hover:text-gold transition-colors"
+                    >
+                      +221 77 602 22 33
+                    </a>
+                    <a
+                      href="tel:+2202921185"
+                      className="block text-white/80 text-base hover:text-gold transition-colors"
+                    >
+                      +220 2921185
+                    </a>
+                  </div>
                 </div>
                 <div>
                   <p className="text-white/75 text-base mb-1">Email:</p>
                   <a
-                    href="mailto:info@atlanticbridgeus.com"
+                    href="mailto:ship@kalajulasxpress.co"
                     className="text-white/80 text-base hover:text-gold transition-colors"
                   >
-                    info@atlanticbridgeus.com
+                    ship@kalajulasxpress.co
                   </a>
                 </div>
               </div>
@@ -252,7 +263,18 @@ export default function Footer() {
           <div className="py-6 px-6 sm:px-10 lg:px-16 xl:px-24">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-white/75 text-sm">
-                Copyright © {currentYear} Atlantic Bridge. All Rights Reserved.
+                Copyright © {currentYear} Kalajulas Xpress. All Rights Reserved.
+              </p>
+              <p className="text-white/75 text-sm">
+                Designed & Built by{" "}
+                <a
+                  href="https://nexusdigitalstudio.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-1 text-gold hover:text-gold-light transition-colors"
+                >
+                  Nexus Digital Studio
+                </a>
               </p>
               <div className="flex items-center gap-6">
                 <Link

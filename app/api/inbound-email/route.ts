@@ -2,8 +2,8 @@ import { Resend } from "resend";
 import { NextRequest } from "next/server";
 import { escapeHtml } from "@/lib/security";
 
-const FORWARD_TO_EMAIL = "atlanticbridgeus@gmail.com";
-const FROM_EMAIL = "Atlantic Bridge <noreply@atlanticbridgeus.com>";
+const FORWARD_TO_EMAIL = "kalajulasxpress@gmail.com";
+const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.co>";
 
 // Lazy initialization of Resend client
 let _resend: Resend | null = null;
@@ -124,7 +124,7 @@ function isAuthorizedWebhook(request: NextRequest): boolean {
 
 /**
  * Webhook endpoint for Resend inbound emails
- * Receives emails sent to info@atlanticbridgeus.com and forwards them to Gmail
+ * Receives emails sent to ship@kalajulasxpress.co and forwards them to Gmail
  */
 export async function POST(request: NextRequest) {
   if (!isAuthorizedWebhook(request)) {

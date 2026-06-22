@@ -2,8 +2,8 @@ import { Resend } from "resend";
 import { escapeHtml } from "./security";
 
 // Email recipient (notifications go to Gmail)
-const NOTIFICATION_EMAIL = "atlanticbridgeus@gmail.com";
-const FROM_EMAIL = "Atlantic Bridge <noreply@atlanticbridgeus.com>";
+const NOTIFICATION_EMAIL = "kalajulasxpress@gmail.com";
+const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.co>";
 
 // Lazy initialization of Resend client
 let _resend: Resend | null = null;
@@ -36,6 +36,7 @@ const SERVICE_NAMES: Record<string, string> = {
   "vehicle-procurement": "Vehicle Procurement",
   "vehicle-shipping": "Vehicle Shipping",
   "cargo-shipping": "Cargo Shipping",
+  "gp-shipping": "GP Shipping (Grand Passager)",
 };
 
 /**
@@ -125,7 +126,7 @@ ${
 }
 
 ---
-This quote request was submitted via the Atlantic Bridge website.
+This quote request was submitted via the Kalajulas Xpress website.
   `.trim();
 
   // Escape all user data for HTML
@@ -216,7 +217,7 @@ This quote request was submitted via the Atlantic Bridge website.
 
   <div style="background: #0a1628; padding: 16px; border-radius: 0 0 8px 8px; text-align: center;">
     <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 12px;">
-      This quote request was submitted via the Atlantic Bridge website.
+      This quote request was submitted via the Kalajulas Xpress website.
     </p>
   </div>
 </body>
@@ -274,7 +275,7 @@ MESSAGE
 ${data.message}
 
 ---
-This message was submitted via the Atlantic Bridge website contact form.
+This message was submitted via the Kalajulas Xpress website contact form.
   `.trim();
 
   // Escape all user data for HTML
@@ -328,7 +329,7 @@ This message was submitted via the Atlantic Bridge website contact form.
 
   <div style="background: #0a1628; padding: 16px; border-radius: 0 0 8px 8px; text-align: center;">
     <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 12px;">
-      This message was submitted via the Atlantic Bridge website contact form.
+      This message was submitted via the Kalajulas Xpress website contact form.
     </p>
   </div>
 </body>
@@ -364,10 +365,10 @@ This message was submitted via the Atlantic Bridge website contact form.
  * Send newsletter welcome email to new subscriber
  */
 export async function sendNewsletterWelcome(email: string): Promise<{ success: boolean; error?: string }> {
-  const subject = "Welcome to Atlantic Bridge!";
+  const subject = "Welcome to Kalajulas Xpress!";
 
   const textContent = `
-Welcome to Atlantic Bridge!
+Welcome to Kalajulas Xpress!
 
 Thank you for subscribing to our newsletter. You'll now receive updates on:
 
@@ -379,12 +380,12 @@ Thank you for subscribing to our newsletter. You'll now receive updates on:
 If you have any questions, simply reply to this email or visit our website.
 
 Best regards,
-The Atlantic Bridge Team
+The Kalajulas Xpress Team
 
 ---
-Atlantic Bridge
+Kalajulas Xpress
 USA to The Gambia Shipping, Export & Sourcing
-https://atlanticbridgeus.com
+https://kalajulasxpress.co
 
 To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
   `.trim();
@@ -398,9 +399,9 @@ To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
   <div style="background: #0a1628; padding: 32px; border-radius: 8px 8px 0 0; text-align: center;">
-    <img src="https://atlanticbridgeus.com/logo.png" alt="Atlantic Bridge" width="80" height="80" style="display: inline-block; margin-bottom: 16px;" />
+    <img src="https://kalajulasxpress.co/logo.png" alt="Kalajulas Xpress" width="80" height="80" style="display: inline-block; margin-bottom: 16px;" />
     <h1 style="color: #d4af37; margin: 0; font-size: 28px;">Welcome Aboard!</h1>
-    <p style="color: rgba(255,255,255,0.8); margin: 12px 0 0 0; font-size: 16px;">Thank you for joining Atlantic Bridge</p>
+    <p style="color: rgba(255,255,255,0.8); margin: 12px 0 0 0; font-size: 16px;">Thank you for joining Kalajulas Xpress</p>
   </div>
 
   <div style="background: #ffffff; padding: 32px; border: 1px solid #e9ecef;">
@@ -417,23 +418,23 @@ To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
 
     <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #d4af37;">
       <p style="margin: 0; font-size: 15px;">
-        <strong>Need help?</strong> Simply reply to this email or visit <a href="https://atlanticbridgeus.com/contact" style="color: #d4af37;">our contact page</a>.
+        <strong>Need help?</strong> Simply reply to this email or visit <a href="https://kalajulasxpress.co/contact" style="color: #d4af37;">our contact page</a>.
       </p>
     </div>
   </div>
 
   <div style="background: #ffffff; padding: 24px; border: 1px solid #e9ecef; border-top: none; text-align: center;">
     <p style="margin: 0 0 16px 0; color: #666;">Ready to ship or source products?</p>
-    <a href="https://atlanticbridgeus.com/quote" style="display: inline-block; background: #d4af37; color: #0a1628; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Get a Free Quote</a>
+    <a href="https://kalajulasxpress.co/quote" style="display: inline-block; background: #d4af37; color: #0a1628; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Get a Free Quote</a>
   </div>
 
   <div style="background: #0a1628; padding: 24px; border-radius: 0 0 8px 8px; text-align: center;">
-    <p style="color: rgba(255,255,255,0.9); margin: 0 0 8px 0; font-weight: 600;">Atlantic Bridge</p>
+    <p style="color: rgba(255,255,255,0.9); margin: 0 0 8px 0; font-weight: 600;">Kalajulas Xpress</p>
     <p style="color: rgba(255,255,255,0.6); margin: 0 0 16px 0; font-size: 13px;">
       USA to The Gambia — Shipping, Export & Sourcing
     </p>
     <p style="margin: 0;">
-      <a href="https://atlanticbridgeus.com" style="color: #d4af37; text-decoration: none; font-size: 14px;">atlanticbridgeus.com</a>
+      <a href="https://kalajulasxpress.co" style="color: #d4af37; text-decoration: none; font-size: 14px;">kalajulasxpress.co</a>
     </p>
     <p style="color: rgba(255,255,255,0.4); margin: 16px 0 0 0; font-size: 11px;">
       To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.

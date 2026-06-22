@@ -70,6 +70,19 @@ const services = [
     image: "/cargo.png",
     href: "/services/cargo-shipping",
   },
+  {
+    id: "gp-shipping",
+    title: "GP Shipping",
+    description: "Consolidated parcel shipping between Seattle and West Africa. Group your parcels with other shipments for affordable two-way delivery to Senegal and Gambia.",
+    features: [
+      "Consolidated shipments",
+      "Two-way service",
+      "Senegal & Gambia",
+      "Cost-effective",
+    ],
+    image: "/fake.jpg",
+    href: "/services/gp-shipping",
+  },
 ];
 
 export default function ServicesPage() {

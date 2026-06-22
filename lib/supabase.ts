@@ -9,7 +9,8 @@ export interface QuoteRecord {
     | "bulk-purchasing"
     | "vehicle-procurement"
     | "vehicle-shipping"
-    | "cargo-shipping";
+    | "cargo-shipping"
+    | "gp-shipping";
   status: "new" | "contacted" | "quoted" | "closed";
   full_name: string;
   email: string;

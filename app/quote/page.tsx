@@ -13,7 +13,7 @@ interface UploadedFile {
   token: string;
 }
 
-type ServiceType = "product-sourcing" | "bulk-purchasing" | "vehicle-procurement" | "vehicle-shipping" | "cargo-shipping" | null;
+type ServiceType = "product-sourcing" | "bulk-purchasing" | "vehicle-procurement" | "vehicle-shipping" | "cargo-shipping" | "gp-shipping" | null;
 
 interface FormData {
   // Common fields
@@ -60,6 +60,14 @@ interface FormData {
   cargoEstimatedWeight: string;
   cargoDimensions: string;
   cargoDeliveryMethod: string;
+
+  // GP Shipping
+  gpDirection: string;
+  gpParcelDescription: string;
+  gpParcelWeight: string;
+  gpDestinationCity: string;
+  gpOriginCity: string;
+  gpUrgency: string;
 }
 
 const initialFormData: FormData = {
@@ -101,6 +109,13 @@ const initialFormData: FormData = {
   cargoEstimatedWeight: "",
   cargoDimensions: "",
   cargoDeliveryMethod: "",
+
+  gpDirection: "",
+  gpParcelDescription: "",
+  gpParcelWeight: "",
+  gpDestinationCity: "",
+  gpOriginCity: "",
+  gpUrgency: "",
 };
 
 const services = [
@@ -151,6 +166,16 @@ const services = [
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      </svg>
+    ),
+  },
+  {
+    id: "gp-shipping" as ServiceType,
+    title: "GP Shipping",
+    description: "Consolidated parcel shipping to Senegal & Gambia",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
       </svg>
     ),
   },
@@ -326,6 +351,14 @@ function QuotePageContent() {
             cargoEstimatedWeight: formData.cargoEstimatedWeight,
             cargoDimensions: formData.cargoDimensions,
             cargoDeliveryMethod: formData.cargoDeliveryMethod,
+          }),
+          ...(formData.serviceType === "gp-shipping" && {
+            gpDirection: formData.gpDirection,
+            gpParcelDescription: formData.gpParcelDescription,
+            gpParcelWeight: formData.gpParcelWeight,
+            gpDestinationCity: formData.gpDestinationCity,
+            gpOriginCity: formData.gpOriginCity,
+            gpUrgency: formData.gpUrgency,
           }),
           // Uploaded images
           images: uploadedImages.map((img) => ({
@@ -1007,6 +1040,131 @@ function QuotePageContent() {
                           className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
                           placeholder="e.g., 4ft x 3ft x 2ft or 'pallet-sized'"
                         />
+                      </div>
+                    </div>
+
+                    <ImageUpload onFilesChange={setUploadedImages} />
+                  </div>
+                )}
+
+                {/* GP Shipping Form */}
+                {formData.serviceType === "gp-shipping" && (
+                  <div className="space-y-6">
+                    <h2 className="text-xl font-bold text-navy">GP Shipping Details</h2>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-navy mb-2">
+                        Shipping Direction *
+                      </label>
+                      <div className="grid grid-cols-2 gap-4">
+                        <button
+                          type="button"
+                          onClick={() => updateFormData("gpDirection", "us-to-africa")}
+                          className={`px-4 py-3 rounded-xl font-medium transition-all ${
+                            formData.gpDirection === "us-to-africa"
+                              ? "bg-gold text-navy"
+                              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                          }`}
+                        >
+                          US to West Africa
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => updateFormData("gpDirection", "africa-to-us")}
+                          className={`px-4 py-3 rounded-xl font-medium transition-all ${
+                            formData.gpDirection === "africa-to-us"
+                              ? "bg-gold text-navy"
+                              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                          }`}
+                        >
+                          West Africa to US
+                        </button>
+                      </div>
+                    </div>
+
+                    {formData.gpDirection === "us-to-africa" && (
+                      <div>
+                        <label className="block text-sm font-semibold text-navy mb-2">
+                          Destination *
+                        </label>
+                        <select
+                          value={formData.gpDestinationCity}
+                          onChange={(e) => updateFormData("gpDestinationCity", e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        >
+                          <option value="">Select destination</option>
+                          <option value="banjul">Banjul, The Gambia</option>
+                          <option value="dakar">Dakar, Senegal</option>
+                          <option value="other">Other city</option>
+                        </select>
+                      </div>
+                    )}
+
+                    {formData.gpDirection === "africa-to-us" && (
+                      <div>
+                        <label className="block text-sm font-semibold text-navy mb-2">
+                          Sending From *
+                        </label>
+                        <select
+                          value={formData.gpOriginCity}
+                          onChange={(e) => updateFormData("gpOriginCity", e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        >
+                          <option value="">Select origin</option>
+                          <option value="banjul">Banjul, The Gambia</option>
+                          <option value="dakar">Dakar, Senegal</option>
+                          <option value="other">Other city</option>
+                        </select>
+                      </div>
+                    )}
+
+                    <div>
+                      <label className="block text-sm font-semibold text-navy mb-2">
+                        What are you sending? *
+                      </label>
+                      <textarea
+                        value={formData.gpParcelDescription}
+                        onChange={(e) => updateFormData("gpParcelDescription", e.target.value)}
+                        rows={3}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        placeholder="Describe the items (e.g., electronics, clothing, documents, gifts...)"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-semibold text-navy mb-2">
+                          Estimated Weight
+                        </label>
+                        <select
+                          value={formData.gpParcelWeight}
+                          onChange={(e) => updateFormData("gpParcelWeight", e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        >
+                          <option value="">Select weight</option>
+                          <option value="under-5kg">Under 5 kg (11 lbs)</option>
+                          <option value="5-10kg">5 - 10 kg (11-22 lbs)</option>
+                          <option value="10-20kg">10 - 20 kg (22-44 lbs)</option>
+                          <option value="20-30kg">20 - 30 kg (44-66 lbs)</option>
+                          <option value="over-30kg">Over 30 kg (66+ lbs)</option>
+                          <option value="not-sure">Not sure</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-navy mb-2">
+                          How Soon?
+                        </label>
+                        <select
+                          value={formData.gpUrgency}
+                          onChange={(e) => updateFormData("gpUrgency", e.target.value)}
+                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        >
+                          <option value="">Select timeline</option>
+                          <option value="asap">As soon as possible</option>
+                          <option value="1-2-weeks">Within 1-2 weeks</option>
+                          <option value="1-month">Within a month</option>
+                          <option value="flexible">Flexible / no rush</option>
+                        </select>
                       </div>
                     </div>
 

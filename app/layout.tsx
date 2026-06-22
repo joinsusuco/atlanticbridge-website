@@ -14,11 +14,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://atlanticbridgeus.com"),
+  metadataBase: new URL("https://kalajulasxpress.co"),
   alternates: {
     canonical: "/",
   },
-  title: "Atlantic Bridge | Ship to Gambia from USA - Vehicles, Products & Cargo",
+  title: "Kalajulas Xpress | Ship to Gambia from USA - Vehicles, Products & Cargo",
   description:
     "Ship to Gambia from USA. Export vehicles, products, and cargo to Banjul. Buy American cars, furniture, and bulk goods with reliable shipping to West Africa.",
   icons: {
@@ -32,17 +32,17 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Atlantic Bridge | Ship to Gambia from USA",
+    title: "Kalajulas Xpress | Ship to Gambia from USA",
     description:
       "Ship cars, products, and cargo from USA to Gambia. Export vehicles to Banjul with reliable West Africa shipping services.",
-    url: "https://atlanticbridgeus.com",
-    siteName: "Atlantic Bridge",
+    url: "https://kalajulasxpress.co",
+    siteName: "Kalajulas Xpress",
     images: [
       {
-        url: "https://atlanticbridgeus.com/og-image.png",
+        url: "https://kalajulasxpress.co/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+        alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
       },
     ],
     locale: "en_US",
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Atlantic Bridge | Ship to Gambia from USA",
+    title: "Kalajulas Xpress | Ship to Gambia from USA",
     description:
       "Ship cars, products, and cargo from USA to Gambia. Export to Banjul with reliable West Africa shipping.",
-    images: ["https://atlanticbridgeus.com/og-image.png"],
+    images: ["https://kalajulasxpress.co/og-image.png"],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Atlantic Bridge",
-  url: "https://atlanticbridgeus.com",
-  logo: "https://atlanticbridgeus.com/logo.svg",
+  name: "Kalajulas Xpress",
+  url: "https://kalajulasxpress.co",
+  logo: "https://kalajulasxpress.co/logo.svg",
   description:
     "US-based sourcing and export company connecting American supply with Gambian demand.",
-  email: "info@atlanticbridgeus.com",
+  email: "ship@kalajulasxpress.co",
   sameAs: [],
   serviceArea: {
     "@type": "Place",
@@ -113,6 +113,14 @@ const jsonLd = {
           "@type": "Service",
           name: "Cargo Shipping",
           description: "Freight forwarding from USA to The Gambia",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "GP Shipping",
+          description: "Consolidated parcel shipping between Seattle and Senegal/Gambia",
         },
       },
     ],

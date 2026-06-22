@@ -6,8 +6,8 @@ const sections = [
   {
     title: "1. Scope",
     content: [
-      "This Privacy Policy explains how Atlantic Bridge collects, uses, stores, and discloses information when you visit our website, request a quote, contact us, subscribe to our newsletter, communicate with us, or otherwise engage with our services.",
-      "This policy applies to information collected through the Atlantic Bridge website and related communications. It does not apply to third-party websites, platforms, payment providers, shipping carriers, customs authorities, or other services that we do not control.",
+      "This Privacy Policy explains how Kalajulas Xpress collects, uses, stores, and discloses information when you visit our website, request a quote, contact us, subscribe to our newsletter, communicate with us, or otherwise engage with our services.",
+      "This policy applies to information collected through the Kalajulas Xpress website and related communications. It does not apply to third-party websites, platforms, payment providers, shipping carriers, customs authorities, or other services that we do not control.",
     ],
   },
   {
@@ -83,7 +83,7 @@ const sections = [
   {
     title: "11. International and Cross-Border Use",
     content: [
-      "Atlantic Bridge operates in a cross-border business context involving the United States and The Gambia. Information may be processed, accessed, or stored in the United States or other jurisdictions where our vendors or service providers operate.",
+      "Kalajulas Xpress operates in a cross-border business context involving the United States and The Gambia. Information may be processed, accessed, or stored in the United States or other jurisdictions where our vendors or service providers operate.",
       "By using the website or submitting information to us, you understand that your information may be transferred to and processed in jurisdictions that may have data protection rules different from those in your location.",
     ],
   },
@@ -100,7 +100,7 @@ const sections = [
     title: "13. Nevada, California, and Other State Disclosures",
     content: [
       "Residents of certain states may have additional privacy rights under applicable law. Where those laws apply, we will process qualifying requests in accordance with applicable legal requirements and available exemptions.",
-      "Nothing in this policy is intended to waive any right, defense, exemption, or limitation available to Atlantic Bridge under applicable law.",
+      "Nothing in this policy is intended to waive any right, defense, exemption, or limitation available to Kalajulas Xpress under applicable law.",
     ],
   },
   {
@@ -112,7 +112,7 @@ const sections = [
   {
     title: "15. Contact Us",
     content: [
-      "If you have questions about this Privacy Policy or want to submit a privacy-related request, contact Atlantic Bridge at info@atlanticbridgeus.com.",
+      "If you have questions about this Privacy Policy or want to submit a privacy-related request, contact Kalajulas Xpress at ship@kalajulasxpress.co.",
     ],
   },
 ];
@@ -136,7 +136,7 @@ export default function PrivacyPage() {
               Privacy Policy
             </h1>
             <p className="mt-6 text-white/80 text-lg leading-relaxed">
-              This policy explains how Atlantic Bridge collects, uses, protects, and shares
+              This policy explains how Kalajulas Xpress collects, uses, protects, and shares
               information in connection with our website, quotes, communications, and related
               services.
             </p>
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
                 <p className="text-sm text-gray-700 leading-7">
                   This policy is designed to describe our current website and business practices in
                   good faith. It is not legal advice to you, and your rights may vary depending on
-                  your location and the nature of your interaction with Atlantic Bridge.
+                  your location and the nature of your interaction with Kalajulas Xpress.
                 </p>
               </div>
 
@@ -183,7 +183,7 @@ export default function PrivacyPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-full border-2 border-navy text-navy font-bold hover:bg-navy hover:text-white transition-all"
                 >
-                  Contact Atlantic Bridge
+                  Contact Kalajulas Xpress
                 </Link>
               </div>
             </div>
