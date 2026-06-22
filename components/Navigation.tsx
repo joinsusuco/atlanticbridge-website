@@ -104,7 +104,7 @@ export default function Navigation() {
               alt="Kalajulas Xpress"
               width={320}
               height={90}
-              className="w-[160px] h-auto sm:w-[200px] sm:h-auto xl:w-[240px] xl:h-auto object-contain object-left flex-shrink-0 self-center"
+              className="w-[130px] h-auto sm:w-[160px] sm:h-auto xl:w-[190px] xl:h-auto object-contain object-left flex-shrink-0 self-center"
               priority
             />
           </Link>
