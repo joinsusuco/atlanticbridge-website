@@ -56,8 +56,8 @@ const faqs = [
   // General
   {
     category: "general",
-    question: "What is Atlantic Bridge?",
-    answer: "Atlantic Bridge is a US-based sourcing, procurement, and export company serving The Gambia. We help buyers access American products, vehicles, and bulk goods through a structured, transparent, and reliable process.",
+    question: "What is Kalajulas Xpress?",
+    answer: "Kalajulas Xpress is a US-based sourcing, procurement, and export company serving The Gambia. We help buyers access American products, vehicles, and bulk goods through a structured, transparent, and reliable process.",
   },
   {
     category: "general",

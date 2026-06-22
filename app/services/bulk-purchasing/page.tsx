@@ -338,7 +338,7 @@ export default function BulkPurchasingPage() {
               Why Choose Us
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
-              The Atlantic Bridge Advantage
+              The Kalajulas Xpress Advantage
             </h2>
           </div>
 

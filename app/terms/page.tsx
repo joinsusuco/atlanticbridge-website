@@ -134,7 +134,7 @@ const sections = [
   {
     title: "19. Contact",
     content: [
-      "Questions about these Terms may be directed to Kalajulas Xpress at ship@kalajulasxpress.co.",
+      "Questions about these Terms may be directed to Kalajulas Xpress at ship@kalajulasxpress.com.",
     ],
   },
 ];

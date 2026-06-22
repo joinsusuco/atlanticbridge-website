@@ -4,25 +4,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services/vehicle-shipping",
   },
-  title: "Ship Car from USA to Gambia | RoRo & Container | Atlantic Bridge",
+  title: "Ship Car from USA to Gambia | RoRo & Container | Kalajulas Xpress",
   description:
     "Ship your car from USA to Gambia. Export vehicles to Banjul via RoRo or container shipping. Affordable car shipping to West Africa with customs support.",
   openGraph: {
-    title: "Ship Car from USA to Gambia | Atlantic Bridge",
+    title: "Ship Car from USA to Gambia | Kalajulas Xpress",
     description:
       "Export your vehicle from USA to Gambia. RoRo and container shipping to Banjul port.",
     images: [
       {
-        url: "https://atlanticbridgeus.com/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+        alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://atlanticbridgeus.com/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 

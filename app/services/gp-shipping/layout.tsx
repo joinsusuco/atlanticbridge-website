@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Consolidated parcel shipping between Seattle and West Africa. Affordable two-way GP service to Senegal and Gambia.",
     images: [
       {
-        url: "https://kalajulasxpress.co/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://kalajulasxpress.co/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 

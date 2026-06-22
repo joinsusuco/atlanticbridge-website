@@ -4,25 +4,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/privacy",
   },
-  title: "Privacy Policy | Atlantic Bridge",
+  title: "Privacy Policy | Kalajulas Xpress",
   description:
-    "Read the Atlantic Bridge Privacy Policy covering information collection, use, communications, data retention, and customer rights.",
+    "Read the Kalajulas Xpress Privacy Policy covering information collection, use, communications, data retention, and customer rights.",
   openGraph: {
-    title: "Privacy Policy | Atlantic Bridge",
+    title: "Privacy Policy | Kalajulas Xpress",
     description:
-      "Atlantic Bridge Privacy Policy for quote requests, contact submissions, newsletter subscriptions, and related website activity.",
+      "Kalajulas Xpress Privacy Policy for quote requests, contact submissions, newsletter subscriptions, and related website activity.",
     images: [
       {
-        url: "https://atlanticbridgeus.com/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+        alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://atlanticbridgeus.com/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 

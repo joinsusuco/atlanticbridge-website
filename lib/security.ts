@@ -424,8 +424,8 @@ export function isValidContentType(request: Request): boolean {
 const ALLOWED_ORIGINS = [
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://atlanticbridgeus.com",
-  "https://www.atlanticbridgeus.com",
+  "https://kalajulasxpress.com",
+  "https://www.kalajulasxpress.com",
   // Add staging/preview URLs if needed
 ];
 

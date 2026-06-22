@@ -16,13 +16,13 @@ export default function Home() {
       {/* Next Departure Banner */}
       <DepartureSection />
 
-      {/* About Atlantic Bridge */}
+      {/* About Kalajulas Xpress */}
       <AboutIntro />
 
       {/* What We Do - Services Showcase */}
       <ServicesShowcase />
 
-      {/* Why Choose Atlantic Bridge */}
+      {/* Why Choose Kalajulas Xpress */}
       <WhyChooseUs />
 
       {/* How It Works */}

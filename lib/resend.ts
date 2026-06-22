@@ -3,7 +3,7 @@ import { escapeHtml } from "./security";
 
 // Email recipient (notifications go to Gmail)
 const NOTIFICATION_EMAIL = "kalajulasxpress@gmail.com";
-const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.co>";
+const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.com>";
 
 // Lazy initialization of Resend client
 let _resend: Resend | null = null;
@@ -385,7 +385,7 @@ The Kalajulas Xpress Team
 ---
 Kalajulas Xpress
 USA to The Gambia Shipping, Export & Sourcing
-https://kalajulasxpress.co
+https://kalajulasxpress.com
 
 To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
   `.trim();
@@ -399,7 +399,7 @@ To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
   <div style="background: #0a1628; padding: 32px; border-radius: 8px 8px 0 0; text-align: center;">
-    <img src="https://kalajulasxpress.co/logo.png" alt="Kalajulas Xpress" width="80" height="80" style="display: inline-block; margin-bottom: 16px;" />
+    <img src="https://kalajulasxpress.com/logo.png" alt="Kalajulas Xpress" width="80" height="80" style="display: inline-block; margin-bottom: 16px;" />
     <h1 style="color: #d4af37; margin: 0; font-size: 28px;">Welcome Aboard!</h1>
     <p style="color: rgba(255,255,255,0.8); margin: 12px 0 0 0; font-size: 16px;">Thank you for joining Kalajulas Xpress</p>
   </div>
@@ -418,14 +418,14 @@ To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
 
     <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #d4af37;">
       <p style="margin: 0; font-size: 15px;">
-        <strong>Need help?</strong> Simply reply to this email or visit <a href="https://kalajulasxpress.co/contact" style="color: #d4af37;">our contact page</a>.
+        <strong>Need help?</strong> Simply reply to this email or visit <a href="https://kalajulasxpress.com/contact" style="color: #d4af37;">our contact page</a>.
       </p>
     </div>
   </div>
 
   <div style="background: #ffffff; padding: 24px; border: 1px solid #e9ecef; border-top: none; text-align: center;">
     <p style="margin: 0 0 16px 0; color: #666;">Ready to ship or source products?</p>
-    <a href="https://kalajulasxpress.co/quote" style="display: inline-block; background: #d4af37; color: #0a1628; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Get a Free Quote</a>
+    <a href="https://kalajulasxpress.com/quote" style="display: inline-block; background: #d4af37; color: #0a1628; padding: 12px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Get a Free Quote</a>
   </div>
 
   <div style="background: #0a1628; padding: 24px; border-radius: 0 0 8px 8px; text-align: center;">
@@ -434,7 +434,7 @@ To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.
       USA to The Gambia — Shipping, Export & Sourcing
     </p>
     <p style="margin: 0;">
-      <a href="https://kalajulasxpress.co" style="color: #d4af37; text-decoration: none; font-size: 14px;">kalajulasxpress.co</a>
+      <a href="https://kalajulasxpress.com" style="color: #d4af37; text-decoration: none; font-size: 14px;">kalajulasxpress.com</a>
     </p>
     <p style="color: rgba(255,255,255,0.4); margin: 16px 0 0 0; font-size: 11px;">
       To unsubscribe, reply with "UNSUBSCRIBE" in the subject line.

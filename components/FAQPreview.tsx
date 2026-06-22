@@ -47,7 +47,7 @@ export default function FAQPreview() {
               Common Questions
             </h2>
             <p className="mt-4 text-gray-600 lg:text-lg">
-              Quick answers to help you understand how Atlantic Bridge works.
+              Quick answers to help you understand how Kalajulas Xpress works.
             </p>
 
             {/* Image */}

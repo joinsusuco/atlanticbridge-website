@@ -14,7 +14,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kalajulasxpress.co"),
+  metadataBase: new URL("https://kalajulasxpress.com"),
   alternates: {
     canonical: "/",
   },
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     title: "Kalajulas Xpress | Ship to Gambia from USA",
     description:
       "Ship cars, products, and cargo from USA to Gambia. Export vehicles to Banjul with reliable West Africa shipping services.",
-    url: "https://kalajulasxpress.co",
+    url: "https://kalajulasxpress.com",
     siteName: "Kalajulas Xpress",
     images: [
       {
-        url: "https://kalajulasxpress.co/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Kalajulas Xpress | Ship to Gambia from USA",
     description:
       "Ship cars, products, and cargo from USA to Gambia. Export to Banjul with reliable West Africa shipping.",
-    images: ["https://kalajulasxpress.co/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 
@@ -61,11 +61,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Kalajulas Xpress",
-  url: "https://kalajulasxpress.co",
-  logo: "https://kalajulasxpress.co/logo.svg",
+  url: "https://kalajulasxpress.com",
+  logo: "https://kalajulasxpress.com/logo.svg",
   description:
     "US-based sourcing and export company connecting American supply with Gambian demand.",
-  email: "ship@kalajulasxpress.co",
+  email: "ship@kalajulasxpress.com",
   sameAs: [],
   serviceArea: {
     "@type": "Place",

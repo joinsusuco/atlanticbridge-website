@@ -4,25 +4,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/faq",
   },
-  title: "FAQ - Shipping from USA to Gambia | Atlantic Bridge",
+  title: "FAQ - Shipping from USA to Gambia | Kalajulas Xpress",
   description:
     "FAQ about shipping to Gambia from USA. How to ship cars, cargo, and products to Banjul. Costs, timelines, and export process to West Africa explained.",
   openGraph: {
-    title: "FAQ - Shipping to Gambia from USA | Atlantic Bridge",
+    title: "FAQ - Shipping to Gambia from USA | Kalajulas Xpress",
     description:
       "Common questions about shipping cars, cargo, and products from USA to Gambia.",
     images: [
       {
-        url: "https://atlanticbridgeus.com/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+        alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://atlanticbridgeus.com/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 
@@ -32,10 +32,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is Atlantic Bridge?",
+      name: "What is Kalajulas Xpress?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Atlantic Bridge is a US-based sourcing, procurement, and export company serving The Gambia. We help buyers access American products, vehicles, and bulk goods through a structured, transparent, and reliable process.",
+        text: "Kalajulas Xpress is a US-based sourcing, procurement, and export company serving The Gambia. We help buyers access American products, vehicles, and bulk goods through a structured, transparent, and reliable process.",
       },
     },
     {

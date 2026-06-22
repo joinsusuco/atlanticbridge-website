@@ -74,7 +74,7 @@ export default function AboutPage() {
               <span className="text-gold-light">Shipping Company</span>
             </h1>
             <p className="mt-6 text-white/80 text-lg lg:text-xl max-w-2xl leading-relaxed">
-              Atlantic Bridge exports vehicles, products, and cargo from the United States
+              Kalajulas Xpress exports vehicles, products, and cargo from the United States
               to Banjul. Your trusted partner for shipping to West Africa.
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
-                Why Atlantic Bridge Exists
+                Why Kalajulas Xpress Exists
               </h2>
               <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
                 International sourcing and shipping can be complicated, expensive, and unreliable.
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 damaged goods, and suppliers who disappear after payment.
               </p>
               <p className="mt-4 text-gray-600 lg:text-lg leading-relaxed">
-                Atlantic Bridge was created to solve these problems. We bring structure, transparency,
+                Kalajulas Xpress was created to solve these problems. We bring structure, transparency,
                 and accountability to US-Gambia trade. Our goal is simple: make it easy for Gambian
                 buyers to access American products and vehicles through a service they can actually trust.
               </p>
@@ -213,7 +213,7 @@ export default function AboutPage() {
                 How We Work
               </span>
               <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Working With Atlantic Bridge
+                Working With Kalajulas Xpress
               </h2>
               <p className="mt-6 text-white/80 lg:text-lg leading-relaxed">
                 We believe in building relationships, not just processing transactions.
@@ -301,7 +301,7 @@ export default function AboutPage() {
                 US Operations, Gambian Focus
               </h2>
               <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
-                Atlantic Bridge operates from the United States with a singular focus:
+                Kalajulas Xpress operates from the United States with a singular focus:
                 serving buyers in The Gambia. We&apos;re positioned to access American suppliers,
                 coordinate with US ports, and manage the export process efficiently.
               </p>

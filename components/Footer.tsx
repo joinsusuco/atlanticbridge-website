@@ -132,10 +132,10 @@ export default function Footer() {
                 <div>
                   <p className="text-white/75 text-base mb-1">Email:</p>
                   <a
-                    href="mailto:ship@kalajulasxpress.co"
+                    href="mailto:ship@kalajulasxpress.com"
                     className="text-white/80 text-base hover:text-gold transition-colors"
                   >
-                    ship@kalajulasxpress.co
+                    ship@kalajulasxpress.com
                   </a>
                 </div>
               </div>

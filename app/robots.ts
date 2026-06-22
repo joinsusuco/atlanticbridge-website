@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://atlanticbridgeus.com/sitemap.xml",
+    sitemap: "https://kalajulasxpress.com/sitemap.xml",
   };
 }

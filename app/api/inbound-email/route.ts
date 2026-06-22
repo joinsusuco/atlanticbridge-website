@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 import { escapeHtml } from "@/lib/security";
 
 const FORWARD_TO_EMAIL = "kalajulasxpress@gmail.com";
-const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.co>";
+const FROM_EMAIL = "Kalajulas Xpress <noreply@kalajulasxpress.com>";
 
 // Lazy initialization of Resend client
 let _resend: Resend | null = null;
@@ -124,7 +124,7 @@ function isAuthorizedWebhook(request: NextRequest): boolean {
 
 /**
  * Webhook endpoint for Resend inbound emails
- * Receives emails sent to ship@kalajulasxpress.co and forwards them to Gmail
+ * Receives emails sent to ship@kalajulasxpress.com and forwards them to Gmail
  */
 export async function POST(request: NextRequest) {
   if (!isAuthorizedWebhook(request)) {

@@ -11,7 +11,7 @@ export default function AboutIntro() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/hero-cargo-ship-aerial.jpg"
-                alt="Atlantic Bridge shipping operations"
+                alt="Kalajulas Xpress logistics operations"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
@@ -34,18 +34,18 @@ export default function AboutIntro() {
           {/* Content */}
           <div className="mt-12 lg:mt-0">
             <span className="text-gold-dark font-bold tracking-wider uppercase text-base">
-              About Atlantic Bridge
+              About Kalajulas Xpress
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
               Connecting US Supply with Gambian Demand
             </h2>
             <p className="mt-6 text-gray-600 lg:text-lg leading-relaxed">
-              Atlantic Bridge is a US-based sourcing, procurement, and export company serving
+              Kalajulas Xpress is a US-based sourcing, procurement, and export company serving
               The Gambia. We help buyers access quality American products, vehicles, and bulk
               goods through a structured, transparent, and reliable process.
             </p>
             <p className="mt-4 text-gray-600 lg:text-lg leading-relaxed">
-              Focused on clear communication and dependable service, Atlantic Bridge creates
+              Focused on clear communication and dependable service, Kalajulas Xpress creates
               a stronger link between American supply and Gambian demand.
             </p>
             <Link

@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
               Why Choose Us
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-navy leading-tight">
-              Why Choose Atlantic Bridge?
+              Why Choose Kalajulas Xpress?
             </h2>
 
             {/* Image Composition */}

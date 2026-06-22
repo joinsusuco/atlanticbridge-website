@@ -112,7 +112,7 @@ const sections = [
   {
     title: "15. Contact Us",
     content: [
-      "If you have questions about this Privacy Policy or want to submit a privacy-related request, contact Kalajulas Xpress at ship@kalajulasxpress.co.",
+      "If you have questions about this Privacy Policy or want to submit a privacy-related request, contact Kalajulas Xpress at ship@kalajulasxpress.com.",
     ],
   },
 ];

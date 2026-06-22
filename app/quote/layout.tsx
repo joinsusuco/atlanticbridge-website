@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/quote",
   },
-  title: "Get a Quote - Ship to Gambia from USA | Atlantic Bridge",
+  title: "Get a Quote - Ship to Gambia from USA | Kalajulas Xpress",
   description:
     "Get a free shipping quote to Gambia. Export cars, cargo, and products from USA to Banjul. Instant pricing for vehicle shipping and freight to West Africa.",
   openGraph: {
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
       "Free quote for shipping cars, cargo, and products from USA to Gambia.",
     images: [
       {
-        url: "https://atlanticbridgeus.com/og-image.png",
+        url: "https://kalajulasxpress.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Atlantic Bridge - US to Gambia Sourcing & Export",
+        alt: "Kalajulas Xpress - US to Gambia Sourcing & Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://atlanticbridgeus.com/og-image.png"],
+    images: ["https://kalajulasxpress.com/og-image.png"],
   },
 };
 
