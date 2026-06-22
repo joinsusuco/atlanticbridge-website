@@ -38,7 +38,7 @@ p, li, label, td, span:not([class*="font-bold"]):not([class*="font-semibold"]) {
 
 /* Base font size bump — scales all rem-based sizes site-wide */
 html {
-  font-size: 100%;
+  font-size: 93%;
   scroll-behavior: smooth;
 }
 
