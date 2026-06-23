@@ -117,6 +117,63 @@ export const supabaseAdmin = {
 };
 
 /**
+ * Fetch shipping schedules from database
+ */
+export async function getShippingSchedules(): Promise<{
+  container: import("@/config/shipping-schedule").ShippingSchedule;
+  gp: import("@/config/shipping-schedule").ShippingSchedule;
+}> {
+  const { defaultContainerSchedule, defaultGPSchedule } = await import("@/config/shipping-schedule");
+
+  try {
+    const { data, error } = await getSupabaseAdmin()
+      .from("shipping_schedules")
+      .select("*")
+      .order("type");
+
+    if (error || !data) {
+      console.error("Failed to fetch shipping schedules:", error);
+      return { container: defaultContainerSchedule, gp: defaultGPSchedule };
+    }
+
+    const records = data as import("@/config/shipping-schedule").ShippingSchedule[];
+    const container = records.find((r) => r.type === "container") || defaultContainerSchedule;
+    const gp = records.find((r) => r.type === "gp") || defaultGPSchedule;
+
+    return { container, gp };
+  } catch {
+    return { container: defaultContainerSchedule, gp: defaultGPSchedule };
+  }
+}
+
+/**
+ * Update a shipping schedule
+ */
+export async function updateShippingSchedule(
+  type: "container" | "gp",
+  data: {
+    departure_date: string;
+    arrival_date: string;
+    booking_deadline: string;
+    departure_port: string;
+    arrival_port: string;
+    show_banner: boolean;
+  }
+): Promise<{ success: boolean; error?: string }> {
+  const { error } = await getSupabaseAdmin()
+    .from("shipping_schedules")
+    .update({ ...data, updated_at: new Date().toISOString() })
+    .eq("type", type);
+
+  if (error) {
+    console.error("Failed to update shipping schedule:", error);
+    return { success: false, error: error.message };
+  }
+
+  return { success: true };
+}
+
+/**
  * Helper to insert a quote record
  */
 export async function insertQuote(

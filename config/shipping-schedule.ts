@@ -1,16 +1,38 @@
-// Shipping Schedule Configuration
-// Update these values when the next departure is scheduled
+// Shipping Schedule Types & Defaults
+// Data is fetched from Supabase at runtime, these are fallbacks
 
-export const shippingSchedule = {
-  // Next departure details
-  departureDate: "TBD",
-  arrivalDate: "TBD",
-  bookingDeadline: "TBD",
+export interface ShippingSchedule {
+  id: string;
+  type: "container" | "gp";
+  departure_date: string;
+  arrival_date: string;
+  booking_deadline: string;
+  departure_port: string;
+  arrival_port: string;
+  show_banner: boolean;
+  updated_at: string;
+}
 
-  // Route information
-  departurePort: "Seattle-Tacoma, WA",
-  arrivalPort: "Banjul, The Gambia",
+export const defaultContainerSchedule: ShippingSchedule = {
+  id: "",
+  type: "container",
+  departure_date: "TBD",
+  arrival_date: "TBD",
+  booking_deadline: "TBD",
+  departure_port: "Seattle-Tacoma, WA",
+  arrival_port: "Banjul, The Gambia",
+  show_banner: true,
+  updated_at: "",
+};
 
-  // Display settings
-  showBanner: true, // Set to false to hide the departure banner
+export const defaultGPSchedule: ShippingSchedule = {
+  id: "",
+  type: "gp",
+  departure_date: "TBD",
+  arrival_date: "TBD",
+  booking_deadline: "TBD",
+  departure_port: "Seattle, WA",
+  arrival_port: "Dakar / Banjul",
+  show_banner: true,
+  updated_at: "",
 };
