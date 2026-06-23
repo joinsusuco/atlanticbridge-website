@@ -11,10 +11,7 @@ export default function AdminLayout({
   return (
     <div className="admin-layout">
       <style>{`
-        .admin-layout header,
-        .admin-layout footer,
-        .admin-layout .floating-departure { display: none !important; }
-        .admin-layout main { padding-top: 0 !important; }
+        .admin-layout ~ footer { display: none !important; }
       `}</style>
       {children}
     </div>
