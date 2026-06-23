@@ -64,7 +64,7 @@ function ScheduleEditor({
   };
 
   const inputClass =
-    "w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold";
+    "w-full px-4 py-4 bg-white border-2 border-gray-300 rounded-xl text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold appearance-none";
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-6">
@@ -244,13 +244,16 @@ export default function AdminPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password"
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold mb-4"
+              autoComplete="current-password"
+              inputMode="text"
+              className="w-full px-4 py-4 text-base border-2 border-gray-300 rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold mb-4 appearance-none"
+              style={{ fontSize: "16px", touchAction: "manipulation" }}
               autoFocus
             />
             <button
               type="submit"
               disabled={loading || !password}
-              className="w-full px-6 py-3 bg-gold text-navy font-bold rounded-full hover:bg-gold-light transition-all disabled:opacity-50"
+              className="w-full px-6 py-4 text-base bg-gold text-navy font-bold rounded-full hover:bg-gold-light transition-all disabled:opacity-50"
             >
               {loading ? "Checking..." : "Login"}
             </button>
@@ -264,7 +267,7 @@ export default function AdminPage() {
   if (!schedules) return null;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 pb-16 px-6">
+    <div className="min-h-screen bg-gray-50 pt-10 pb-16 px-6">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-navy mb-2">Departure Schedules</h1>
         <p className="text-gray-600 mb-8">Update departure dates from here. Changes go live immediately.</p>
