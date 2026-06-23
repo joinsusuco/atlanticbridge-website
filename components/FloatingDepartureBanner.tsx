@@ -13,13 +13,19 @@ export default function FloatingDepartureBanner() {
   const [gp, setGp] = useState<ShippingSchedule>(defaultGPSchedule);
 
   useEffect(() => {
-    fetch("/api/schedules")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.container) setContainer(data.container);
-        if (data.gp) setGp(data.gp);
-      })
-      .catch(() => {});
+    const fetchSchedules = () => {
+      fetch("/api/schedules")
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.container) setContainer(data.container);
+          if (data.gp) setGp(data.gp);
+        })
+        .catch(() => {});
+    };
+
+    fetchSchedules();
+    const interval = setInterval(fetchSchedules, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
