@@ -8,7 +8,7 @@ import { defaultContainerSchedule, defaultGPSchedule } from "@/config/shipping-s
 export default function FloatingDepartureBanner() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [bottomOffset, setBottomOffset] = useState(24);
-  const [activeTab, setActiveTab] = useState<"container" | "gp">("container");
+  const [activeTab, setActiveTab] = useState<"container" | "gp">("gp");
   const [container, setContainer] = useState<ShippingSchedule>(defaultContainerSchedule);
   const [gp, setGp] = useState<ShippingSchedule>(defaultGPSchedule);
 

@@ -12,7 +12,7 @@ interface DepartureBannerProps {
 export default function DepartureBanner({ variant = "full" }: DepartureBannerProps) {
   const [container, setContainer] = useState<ShippingSchedule>(defaultContainerSchedule);
   const [gp, setGp] = useState<ShippingSchedule>(defaultGPSchedule);
-  const [activeTab, setActiveTab] = useState<"container" | "gp">("container");
+  const [activeTab, setActiveTab] = useState<"container" | "gp">("gp");
 
   useEffect(() => {
     fetch("/api/schedules")
